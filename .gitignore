@@ -1,0 +1,11 @@
+.project
+.pydevproject
+*.pyc
+.settings/
+.eggs/
+Platypus.egg-info/
+Platypus_Opt.egg-info/
+build/
+dist/
+private/
+.ipynb_checkpoints/
