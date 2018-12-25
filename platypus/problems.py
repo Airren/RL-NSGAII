@@ -120,12 +120,12 @@ class DTLZ2(Problem):
 
     def get_ref_set(self):
         ref_set = []
-        pf_true = pd.read_csv("../pareto_fronts/DTLZ2.2D.pf", sep="\t", header=-1, names=['f1', 'f2'], index_col=None,
-                              float_precision=14, usecols=[0,1,2])
-        for row in pf_true.iterrows():
-            solution = Solution(Schaffer())
-            solution.objectives[:] = list(row[1])
-            ref_set.append(solution)
+        # pf_true = pd.read_csv("../pareto_fronts/DTLZ2.3D.pf", sep="\t", header=-1, names=['f1', 'f2'], index_col=None,
+        #                       float_precision=14, usecols=[0,1,2])
+        # for row in pf_true.iterrows():
+        #     solution = Solution(Schaffer())
+        #     solution.objectives[:] = list(row[1])
+        #     ref_set.append(solution)
         return ref_set
         
     def random(self):

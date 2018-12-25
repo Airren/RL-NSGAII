@@ -17,7 +17,7 @@ from platypus import  *
 
 
 def compare_experiment(problem):
-    times = 2
+    times = 1000
 
     # problem = Schaffer()
     # problem = ZDT4()
@@ -26,28 +26,28 @@ def compare_experiment(problem):
     algorithm.run(a*times)
 
 
-    algorithm.RL.q_table.to_csv("./q_table_zdt2.csv")
+    # algorithm.RL.q_table.to_csv("./q_table_zdt2.csv")
     ref_set = problem.get_ref_set()
 
-    # Calculate the performance metrics.
-    hyp = Hypervolume(reference_set = ref_set)
-    print("Hypervolume:", hyp.calculate(algorithm.result))
+    # # Calculate the performance metrics.
+    # hyp = Hypervolume(reference_set = ref_set)
+    # print("Hypervolume:", hyp.calculate(algorithm.result))
+    #
+    # gd = GenerationalDistance(reference_set = ref_set)
+    # print("GD:", gd.calculate(algorithm.result))
+    #
+    # igd = InvertedGenerationalDistance(reference_set = ref_set)
+    # print("IGD:", igd.calculate(algorithm.result))
+    #
+    # aei = EpsilonIndicator(reference_set = ref_set)
+    # print("Eps-Indicator:", aei.calculate(algorithm.result))
+    #
+    # spacing = Spacing()
+    # print("Spacing:", spacing.calculate(algorithm.result))
 
-    gd = GenerationalDistance(reference_set = ref_set)
-    print("GD:", gd.calculate(algorithm.result))
-
-    igd = InvertedGenerationalDistance(reference_set = ref_set)
-    print("IGD:", igd.calculate(algorithm.result))
-
-    aei = EpsilonIndicator(reference_set = ref_set)
-    print("Eps-Indicator:", aei.calculate(algorithm.result))
-
-    spacing = Spacing()
-    print("Spacing:", spacing.calculate(algorithm.result))
 
 
-
-    algorithm2 = NSGAII(problem)
+    algorithm2 = NSGAIII(problem,100)
     a = algorithm2.population_size
     algorithm2.run(a*times)
     ref_set = problem.get_ref_set()
@@ -83,14 +83,14 @@ def compare_experiment(problem):
     # plt.plot(list(range(len(algorithm2.hyp))),algorithm2.hyp,c = '#FFD700', marker="")
 
 
-    print("RL_NSGA: ",algorithm.igd[-1])
+    # print("RL_NSGA: ",algorithm.igd[-1])
 
     print("NSGA: ",algorithm2.igd[-1])
 
 
-
-    with open('../results/igd.csv', 'a+') as F:
-        F.write(str(type(problem).__name__)+','+str(algorithm.igd[-1])+','+str(algorithm2.igd[-1])+'\n')
+    #
+    # with open('../results/igd.csv', 'a+') as F:
+    #     F.write(str(type(problem).__name__)+','+str(algorithm.igd[-1])+','+str(algorithm2.igd[-1])+'\n')
 
     # xnew = np.linspace(0,len(algorithm.igd),1200)
     # y = spline(list(range(len(algorithm.igd))),algorithm.igd,xnew)
@@ -107,7 +107,7 @@ def compare_experiment(problem):
 
 
 if __name__ == "__main__":
-    compare_experiment(ZDT3())
+    compare_experiment(ZDT6())
 
 
 

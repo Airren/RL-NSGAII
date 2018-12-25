@@ -183,13 +183,6 @@ class NSGAII(AbstractGeneticAlgorithm):
         self.variator = variator
         self.archive = archive
 
-        self.ref_set = problem.get_ref_set()
-
-        self.igd = []
-        self.hyp = []
-        self.gd = []
-        self.aei = []
-        self.spacing = []
 
     def step(self):
         if self.nfe == 0:
@@ -224,38 +217,28 @@ class NSGAII(AbstractGeneticAlgorithm):
         nondominated_sort(offspring)
         self.population = nondominated_truncate(offspring, self.population_size)
 
-        igd = InvertedGenerationalDistance(reference_set=self.ref_set)
-        igd_value = igd.calculate(self.result)
-        print("IGD:", igd_value)
-        self.igd.append(igd_value)
+        # igd = InvertedGenerationalDistance(reference_set=self.ref_set)
+        # igd_value = igd.calculate(self.result)
+        # # print("IGD:", igd_value)
+        # self.igd.append(igd_value)
 
-        gd = GenerationalDistance(reference_set=self.ref_set)
-        gd_value = gd.calculate(self.result)
-        print("GD:", gd_value)
-        self.gd.append(gd_value)
-
-        # Calculate the performance metrics.
-        hyp = Hypervolume(reference_set=self.ref_set)
-        hyp_value = hyp.calculate(self.result)
-        # print("Hypervolume:", hyp_value)
-        self.hyp.append(hyp_value)
+        # gd = GenerationalDistance(reference_set=self.ref_set)
+        # gd_value = gd.calculate(self.result)
+        # print("GD:", gd_value)
+        # self.gd.append(gd_value)
         #
+        # # Calculate the performance metrics.
+        # hyp = Hypervolume(reference_set=self.ref_set)
+        # hyp_value = hyp.calculate(self.result)
+        # # print("Hypervolume:", hyp_value)
+        # self.hyp.append(hyp_value)
+        # #
 
         if self.archive is not None:
             self.archive.extend(self.population)
 
 
 class RL_NSGAII(AbstractGeneticAlgorithm):
-
-
-
-
-    ACTIONS = ['mutation_1', 'mutation_2', 'crossover_1', 'crossover_2']  # available actions
-    # EPSILON = 0.9  # greedy police  贪婪度
-    ALPHA = 0.1  # learning rate   学习率
-    GAMMA = 0.9  # discount factor
-
-
 
     def __init__(self, problem,
                  population_size=100,
@@ -270,23 +253,19 @@ class RL_NSGAII(AbstractGeneticAlgorithm):
         self.archive = archive
         self.counter = 0
 
-        self.ref_set = problem.get_ref_set()
+
 
 
         self.actions = [str(i) for i in range(problem.nvars*2)]
         self.RL = QLearningTable(actions=self.actions)
 
-        self.igd = []
-        self.hyp = []
-        self.gd = []
-        self.aei = []
-        self.spacing = []
+
 
     def step(self):
         if self.nfe == 0:
             self.initialize()
         else:
-            print(self.nfe)
+            # print(self.nfe)
             self.iterate()
 
         if self.archive is not None:
@@ -306,7 +285,7 @@ class RL_NSGAII(AbstractGeneticAlgorithm):
     def iterate(self):
         offspring = []
         self.counter += 1
-        print(self.counter)
+        # print(self.counter)
 
         '''
         通过Q_learning 改进交叉和变异的方法  促进种群的优化
@@ -344,7 +323,7 @@ class RL_NSGAII(AbstractGeneticAlgorithm):
 
             offspring.extend(child_2)
 
-        print("Q learning")
+        # print("Q learning")
 
         '''
         非支配排序和拥挤度的计算
@@ -356,21 +335,21 @@ class RL_NSGAII(AbstractGeneticAlgorithm):
         self.population = nondominated_truncate(offspring, self.population_size)
 
 
-        igd = InvertedGenerationalDistance(reference_set=self.ref_set)
-        igd_value = igd.calculate(self.result)
-        print("IGD:", igd_value)
-        self.igd.append(igd_value)
+        # igd = InvertedGenerationalDistance(reference_set=self.ref_set)
+        # igd_value = igd.calculate(self.result)
+        # # print("IGD:", igd_value)
+        # self.igd.append(igd_value)
 
-        # Calculate the performance metrics.
-        hyp = Hypervolume(reference_set=self.ref_set)
-        hyp_value = hyp.calculate(self.result)
-        # print("Hypervolume:", hyp_value)
-        self.hyp.append(hyp_value)
-        #
-        gd = GenerationalDistance(reference_set=self.ref_set)
-        gd_value = gd.calculate(self.result)
-        # print("GD:", gd_value)
-        self.gd.append(gd_value)
+        # # Calculate the performance metrics.
+        # hyp = Hypervolume(reference_set=self.ref_set)
+        # hyp_value = hyp.calculate(self.result)
+        # # print("Hypervolume:", hyp_value)
+        # self.hyp.append(hyp_value)
+        # #
+        # gd = GenerationalDistance(reference_set=self.ref_set)
+        # gd_value = gd.calculate(self.result)
+        # # print("GD:", gd_value)
+        # self.gd.append(gd_value)
         #
         # aei = EpsilonIndicator(reference_set=self.ref_set)
         # aei_value = aei.calculate(self.result)
@@ -404,6 +383,8 @@ class RL_NSGAII(AbstractGeneticAlgorithm):
 
         child_2 = ''
 
+        # if (int(action) != len(self.actions) - 1):
+
         location = int(action) // 2
         action_method = int(action) % 2
 
@@ -420,6 +401,9 @@ class RL_NSGAII(AbstractGeneticAlgorithm):
             pass
 
         childs = [child_1, child[1]]
+
+        # else:
+        #     childs = child
         return  childs
 
 
@@ -624,10 +608,10 @@ class SPEA2(AbstractGeneticAlgorithm):
         offspring.extend(self.population)
         self._assign_fitness(offspring)
         self.population = self._truncate(offspring, self.population_size)
-        igd = InvertedGenerationalDistance(reference_set=self.ref_set)
-        igd_value = igd.calculate(self.result)
-        print("IGD:", igd_value)
-        self.igd.append(igd_value)
+        # igd = InvertedGenerationalDistance(reference_set=self.ref_set)
+        # igd_value = igd.calculate(self.result)
+        # # print("IGD:", igd_value)
+        # self.igd.append(igd_value)
         
 class MOEAD(AbstractGeneticAlgorithm):
     
@@ -1000,6 +984,7 @@ class NSGAIII(AbstractGeneticAlgorithm):
         offspring.extend(self.population)
         nondominated_sort(offspring)
         self.population = self._reference_point_truncate(offspring, self.population_size)
+
 
 class ParticleSwarm(Algorithm):
     

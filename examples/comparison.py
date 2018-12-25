@@ -6,9 +6,11 @@ if __name__ == '__main__':
     # setup the experiment
     problem = DTLZ2(3)
 
-    algorithms = [NSGAII,
+    algorithms = [
                   (NSGAIII, {"divisions_outer": 12}),
-                  (CMAES, {"epsilons": [0.05]}),
+        RL_NSGAII,
+                  # (CMAES, {"epsilons": [0.05]}),
+        NSGAII,
                   GDE3,
                   IBEA,
                   (MOEAD, {"weight_generator": normal_boundary_weights, "divisions_outer": 12}),
@@ -30,7 +32,7 @@ if __name__ == '__main__':
         ax = fig.add_subplot(2, 5, i + 1, projection='3d')
         ax.scatter([s.objectives[0] for s in result],
                    [s.objectives[1] for s in result],
-                   [s.objectives[2] for s in result])
+                   [s.objectives[2] for s in result],c='r',marker='.')
         ax.set_title(algorithm)
         ax.set_xlim([0, 1.1])
         ax.set_ylim([0, 1.1])

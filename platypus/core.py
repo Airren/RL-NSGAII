@@ -360,6 +360,7 @@ class Algorithm(object):
         self.nfe = 0
 
         self.ref_set = problem.get_ref_set()
+
         self.igd = []
         self.hyp = []
         self.gd = []
