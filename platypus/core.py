@@ -394,8 +394,26 @@ class Algorithm(object):
                 unevaluated[i].constraint_violation = result.solution.constraint_violation
                 unevaluated[i].feasible = result.solution.feasible
                 unevaluated[i].evaluated = result.solution.evaluated
-        
+
         self.nfe += len(unevaluated)
+
+    def evaluate_local(self, solutions):
+        unevaluated = [s for s in solutions if not s.evaluated]
+
+        jobs = [_EvaluateJob(s) for s in unevaluated]
+        results = self.evaluator.evaluate_all(jobs)
+
+        # if needed, update the original solution with the results
+        for i, result in enumerate(results):
+            if unevaluated[i] != result.solution:
+                unevaluated[i].variables[:] = result.solution.variables[:]
+                unevaluated[i].objectives[:] = result.solution.objectives[:]
+                unevaluated[i].constraints[:] = result.solution.constraints[:]
+                unevaluated[i].constraint_violation = result.solution.constraint_violation
+                unevaluated[i].feasible = result.solution.feasible
+                unevaluated[i].evaluated = result.solution.evaluated
+
+
     
     def run(self, condition, callback=None):
         if isinstance(condition, int):

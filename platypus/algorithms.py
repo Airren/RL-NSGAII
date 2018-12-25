@@ -217,10 +217,14 @@ class NSGAII(AbstractGeneticAlgorithm):
         nondominated_sort(offspring)
         self.population = nondominated_truncate(offspring, self.population_size)
 
-        # igd = InvertedGenerationalDistance(reference_set=self.ref_set)
-        # igd_value = igd.calculate(self.result)
-        # # print("IGD:", igd_value)
-        # self.igd.append(igd_value)
+
+        '''
+        收敛过程中的评价指标
+        '''
+        igd = InvertedGenerationalDistance(reference_set=self.ref_set)
+        igd_value = igd.calculate(self.result)
+        # print("IGD:", igd_value)
+        self.igd.append(igd_value)
 
         # gd = GenerationalDistance(reference_set=self.ref_set)
         # gd_value = gd.calculate(self.result)
@@ -251,7 +255,7 @@ class RL_NSGAII(AbstractGeneticAlgorithm):
         self.selector = selector
         self.variator = variator
         self.archive = archive
-        self.counter = 0
+
 
 
 
@@ -284,9 +288,6 @@ class RL_NSGAII(AbstractGeneticAlgorithm):
 
     def iterate(self):
         offspring = []
-        self.counter += 1
-        # print(self.counter)
-
         '''
         通过Q_learning 改进交叉和变异的方法  促进种群的优化
         '''
@@ -296,7 +297,7 @@ class RL_NSGAII(AbstractGeneticAlgorithm):
 
             # 交叉变异产生 两个子代
             child = self.variator.evolve(parents)
-
+            self.evaluate_local(child)
             '''
             学习阶段
             '''
@@ -305,14 +306,13 @@ class RL_NSGAII(AbstractGeneticAlgorithm):
             '''
             observation = str([int(i) for i in (child[0].objectives._data)])
 
-            action = self.RL.choose_action(observation,self.counter)
-
+            action = self.RL.choose_action(observation,self.nfe/self.population_size)
 
             child_2 = self.leaning_actions(action,child)
 
             observation_ = str([int(i) for i in (child_2[0].objectives._data )])
 
-            self.evaluate_all(child_2)
+            self.evaluate_local(child_2)
 
             '''
             每次迭代通过  结果评价指标  给予一定的奖励
@@ -323,22 +323,27 @@ class RL_NSGAII(AbstractGeneticAlgorithm):
 
             offspring.extend(child_2)
 
-        # print("Q learning")
+
 
         '''
         非支配排序和拥挤度的计算
         '''
         self.evaluate_all(offspring)
+        self.nfe += self.population_size
+
 
         offspring.extend(self.population)
         nondominated_sort(offspring)
         self.population = nondominated_truncate(offspring, self.population_size)
 
 
-        # igd = InvertedGenerationalDistance(reference_set=self.ref_set)
-        # igd_value = igd.calculate(self.result)
-        # # print("IGD:", igd_value)
-        # self.igd.append(igd_value)
+
+        '''
+        收敛过程中的评价指标
+        '''
+        igd = InvertedGenerationalDistance(reference_set=self.ref_set)
+        igd_value = igd.calculate(self.result)
+        self.igd.append(igd_value)
 
         # # Calculate the performance metrics.
         # hyp = Hypervolume(reference_set=self.ref_set)
@@ -362,11 +367,6 @@ class RL_NSGAII(AbstractGeneticAlgorithm):
         # self.spacing.append(spacing_value)
 
 
-        # reward = 0
-        #
-        # reward = 0 - igd_value
-        # self.RL.learn(observation, action, reward, observation_)
-        #
 
 
 
@@ -608,10 +608,9 @@ class SPEA2(AbstractGeneticAlgorithm):
         offspring.extend(self.population)
         self._assign_fitness(offspring)
         self.population = self._truncate(offspring, self.population_size)
-        # igd = InvertedGenerationalDistance(reference_set=self.ref_set)
-        # igd_value = igd.calculate(self.result)
-        # # print("IGD:", igd_value)
-        # self.igd.append(igd_value)
+        igd = InvertedGenerationalDistance(reference_set=self.ref_set)
+        igd_value = igd.calculate(self.result)
+        self.igd.append(igd_value)
         
 class MOEAD(AbstractGeneticAlgorithm):
     
@@ -823,7 +822,9 @@ class NSGAIII(AbstractGeneticAlgorithm):
 
         self.ideal_point = [POSITIVE_INFINITY]*problem.nobjs
         self.reference_points = normal_boundary_weights(problem.nobjs, divisions_outer, divisions_inner)
-        
+
+
+
         # NSGAIII currently only works on minimization problems
         if any([d != Problem.MINIMIZE for d in problem.directions]):
             raise PlatypusError("NSGAIII currently only works with minimization problems")
@@ -984,6 +985,10 @@ class NSGAIII(AbstractGeneticAlgorithm):
         offspring.extend(self.population)
         nondominated_sort(offspring)
         self.population = self._reference_point_truncate(offspring, self.population_size)
+
+        igd = InvertedGenerationalDistance(reference_set=self.ref_set)
+        igd_value = igd.calculate(self.result)
+        self.igd.append(igd_value)
 
 
 class ParticleSwarm(Algorithm):

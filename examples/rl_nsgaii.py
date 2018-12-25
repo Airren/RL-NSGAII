@@ -7,107 +7,94 @@ import pandas as pd
 import numpy as np
 import threading
 
-from scipy.interpolate import spline
 
-
-from platypus import NSGAII, Problem, Real
-
-
+import matplotlib.pyplot as plt
 from platypus import  *
 
 
+
 def compare_experiment(problem):
-    times = 1000
 
-    # problem = Schaffer()
-    # problem = ZDT4()
-    algorithm = RL_NSGAII(problem)
-    a = algorithm.population_size
-    algorithm.run(a*times)
-
-
-    # algorithm.RL.q_table.to_csv("./q_table_zdt2.csv")
+    times = 200
     ref_set = problem.get_ref_set()
 
-    # # Calculate the performance metrics.
-    # hyp = Hypervolume(reference_set = ref_set)
-    # print("Hypervolume:", hyp.calculate(algorithm.result))
-    #
-    # gd = GenerationalDistance(reference_set = ref_set)
-    # print("GD:", gd.calculate(algorithm.result))
-    #
-    # igd = InvertedGenerationalDistance(reference_set = ref_set)
-    # print("IGD:", igd.calculate(algorithm.result))
-    #
-    # aei = EpsilonIndicator(reference_set = ref_set)
-    # print("Eps-Indicator:", aei.calculate(algorithm.result))
-    #
-    # spacing = Spacing()
-    # print("Spacing:", spacing.calculate(algorithm.result))
+    algorithms = [RL_NSGAII,NSGAII,SPEA2,(NSGAIII,100)]
 
 
+    # Corlor Table https://www.cnblogs.com/darkknightzh/p/6117528.html
+    # red lawgreen darkorange darkred aqua deepskyblue
 
-    algorithm2 = NSGAIII(problem,100)
-    a = algorithm2.population_size
-    algorithm2.run(a*times)
-    ref_set = problem.get_ref_set()
+    colors = ['#FF0000','#7CFC00','#FF8C00','#8B0000','#00FFFF','#00BFFF',]
+    markers = ['.','.','.']
+
+    results = {}
 
 
 
 
 
-    # plot the results using matplotlib
-    import matplotlib.pyplot as plt
-    plt.subplot(1,2,1)
+
+
+
+    for algorithm in algorithms:
+        if isinstance(algorithm, tuple):
+            pass
+            algorithm = algorithm[0](problem,algorithm[1])
+            a = algorithm.population_size
+            algorithm.run(a * times)
+        else:
+            algorithm = algorithm(problem)
+            a = algorithm.population_size
+            algorithm.run(a * times)
+        i = type(algorithm).__name__
+        results[i] = []
+        results[i].append(algorithm.result)
+        results[i].append(algorithm.igd)
+
+    # fig.tight_layout()  # 调整整体空白
+    plt.subplots_adjust(wspace=0.3, hspace=0)  # 调整子图间距
+    plt.subplot(1, 2, 1)
+    plt.title(type(problem).__name__)
     plt.xlabel("$f_1(x)$")
     plt.ylabel("$f_2(x)$")
-    plt.title(type(problem).__name__)
     plt.scatter([s.objectives[0] for s in ref_set],
-                [s.objectives[1] for s in ref_set],c = 'b',marker='.')
-    plt.scatter([s.objectives[0] for s in algorithm.result],
-                [s.objectives[1] for s in algorithm.result],c = 'r',marker='.')
+                [s.objectives[1] for s in ref_set], c='b', marker='.')
+
+    for i,j in enumerate(results):
+        plt.scatter([s.objectives[0] for s in results[j][0]],
+                    [s.objectives[1] for s in results[j][0]], c=colors[i], marker='.')
 
 
-
-    plt.scatter([s.objectives[0] for s in algorithm2.result],
-                [s.objectives[1] for s in algorithm2.result],c = '#FFD700',marker='x')
-    plt.subplot(1,2,2)
-    plt.plot(list(range(len(algorithm.igd))),algorithm.igd,c = 'r', marker="")
-    # plt.plot(list(range(len(algorithm.hyp))),algorithm.hyp,c = 'r', marker="")
-    # plt.plot(list(range(len(algorithm.gd))),algorithm.gd,c = 'r', marker="")
-    # plt.plot(list(range(len(algorithm.aei))),algorithm.aei,c = 'r', marker="")
-    # plt.plot(list(range(len(algorithm.spacing))),algorithm.spacing,c = 'r', marker="")
-
-    plt.plot(list(range(len(algorithm2.igd))),algorithm2.igd,c = '#FFD700', marker="")
-    # plt.plot(list(range(len(algorithm2.gd))),algorithm2.gd,c = '#FFD700', marker="")
-    # plt.plot(list(range(len(algorithm2.hyp))),algorithm2.hyp,c = '#FFD700', marker="")
-
-
-    # print("RL_NSGA: ",algorithm.igd[-1])
-
-    print("NSGA: ",algorithm2.igd[-1])
-
-
-    #
-    # with open('../results/igd.csv', 'a+') as F:
-    #     F.write(str(type(problem).__name__)+','+str(algorithm.igd[-1])+','+str(algorithm2.igd[-1])+'\n')
-
-    # xnew = np.linspace(0,len(algorithm.igd),1200)
-    # y = spline(list(range(len(algorithm.igd))),algorithm.igd,xnew)
-    # plt.plot(xnew,y)
-
-    # plt.xlim([0, 1.1])
-    # plt.ylim([0, 1.1])
+    plt.subplot(1, 2, 2)
     plt.xlabel("$evolution times$")
     plt.ylabel("$IGD$")
-    plt.savefig("../results/"+str(type(problem).__name__)+'_'+time.strftime("%m-%d_%H-%M-%S", time.gmtime())+".png")
+
+    for i, j in enumerate(results):
+        plt.plot(list(range(len(results[j][1]))), results[j][1], c=colors[i], marker="",label=j)
+
+
+
+    plt.legend(loc=1)
+
+    # plt.legend(plots,['RL_NSGAII','NSGAII','SPEA2','NSGAIII'])
+
+    plt.savefig("../results/"+str(type(problem).__name__)+'_'+time.strftime("%m-%d_%H-%M-%S", time.gmtime())+".png",dpi=400)
     # plt.show()
     plt.close()
 
 
+    with open('../results/igd.csv', 'a+') as F:
+        F.write(str(type(problem).__name__) + ',')
+        for i in results:
+            F.write(str(results[i][1][-1])+ ',')
+        F.write('\n')
+
+
+
+
 
 if __name__ == "__main__":
-    compare_experiment(ZDT6())
+    compare_experiment(ZDT2())
 
 
 

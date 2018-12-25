@@ -120,12 +120,13 @@ class DTLZ2(Problem):
 
     def get_ref_set(self):
         ref_set = []
-        # pf_true = pd.read_csv("../pareto_fronts/DTLZ2.3D.pf", sep="\t", header=-1, names=['f1', 'f2'], index_col=None,
-        #                       float_precision=14, usecols=[0,1,2])
-        # for row in pf_true.iterrows():
-        #     solution = Solution(Schaffer())
-        #     solution.objectives[:] = list(row[1])
-        #     ref_set.append(solution)
+        pf_true = pd.read_csv("../pareto_fronts/DTLZ2.3D.pf", sep="\t", header=None, names=['f1', 'f2','f3'],index_col=None,
+                              float_precision=14,
+                              usecols=[0,1,2])
+        for i,row in pf_true.iterrows():
+            solution = Solution(DTLZ2(3))
+            solution.objectives[:] = list(row)
+            ref_set.append(solution)
         return ref_set
         
     def random(self):
@@ -1672,9 +1673,9 @@ class ZDT1(ZDT):
         ref_set = []
         pf_true = pd.read_csv("../pareto_fronts/ZDT1.pf", sep=" ", header=-1, names=['f1', 'f2'], index_col=None,
                     float_precision=14, usecols=[0, 1])
-        for row in pf_true.iterrows():
-            solution = Solution(Schaffer())
-            solution.objectives[:] = list(row[1])
+        for i,row in pf_true.iterrows():
+            solution = Solution(ZDT1())
+            solution.objectives[:] = list(row)
             ref_set.append(solution)
         return  ref_set
 
@@ -1693,9 +1694,9 @@ class ZDT2(ZDT):
         ref_set = []
         pf_true = pd.read_csv("../pareto_fronts/ZDT2.pf", sep=" ", header=-1, names=['f1', 'f2'], index_col=None,
                     float_precision=14, usecols=[0, 1])
-        for row in pf_true.iterrows():
-            solution = Solution(Schaffer())
-            solution.objectives[:] = list(row[1])
+        for i,row in pf_true.iterrows():
+            solution = Solution(ZDT2())
+            solution.objectives[:] = list(row)
             ref_set.append(solution)
         return  ref_set
 
@@ -1713,9 +1714,9 @@ class ZDT3(ZDT):
         ref_set = []
         pf_true = pd.read_csv("../pareto_fronts/ZDT3.pf", sep="\t", header=-1, names=['f1', 'f2'], index_col=None,
                     float_precision=14, usecols=[0, 1])
-        for row in pf_true.iterrows():
-            solution = Solution(Schaffer())
-            solution.objectives[:] = list(row[1])
+        for i,row in pf_true.iterrows():
+            solution = Solution(ZDT3())
+            solution.objectives[:] = list(row)
             ref_set.append(solution)
         return  ref_set
                               
@@ -1732,9 +1733,9 @@ class ZDT4(ZDT):
     def get_ref_set(self):
         ref_set = []
         pf_true = pd.read_csv("../pareto_fronts/ZDT4.pf", sep="\t", header=-1, names=['f1', 'f2'], index_col=None,float_precision=14, usecols=[0, 1])
-        for row in pf_true.iterrows():
-            solution = Solution(Schaffer())
-            solution.objectives[:] = list(row[1])
+        for i,row in pf_true.iterrows():
+            solution = Solution(ZDT4())
+            solution.objectives[:] = list(row)
             ref_set.append(solution)
         return  ref_set
         
@@ -1765,9 +1766,9 @@ class ZDT6(ZDT):
     def get_ref_set(self):
         ref_set = []
         pf_true = pd.read_csv("../pareto_fronts/ZDT6.pf", sep="\t", header=-1, names=['f1', 'f2'], index_col=None,float_precision=14, usecols=[0, 1])
-        for row in pf_true.iterrows():
-            solution = Solution(Schaffer())
-            solution.objectives[:] = list(row[1])
+        for i,row in pf_true.iterrows():
+            solution = Solution(ZDT6())
+            solution.objectives[:] = list(row)
             ref_set.append(solution)
         return  ref_set
         
