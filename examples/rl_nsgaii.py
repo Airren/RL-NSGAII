@@ -29,13 +29,6 @@ def compare_experiment(problem):
 
     results = {}
 
-
-
-
-
-
-
-
     for algorithm in algorithms:
         if isinstance(algorithm, tuple):
             pass
@@ -52,20 +45,27 @@ def compare_experiment(problem):
         results[i].append(algorithm.igd)
 
     # fig.tight_layout()  # 调整整体空白
+    plt.figure(figsize=(20,5))
     plt.subplots_adjust(wspace=0.3, hspace=0)  # 调整子图间距
-    plt.subplot(1, 2, 1)
-    plt.title(type(problem).__name__)
-    plt.xlabel("$f_1(x)$")
-    plt.ylabel("$f_2(x)$")
-    plt.scatter([s.objectives[0] for s in ref_set],
-                [s.objectives[1] for s in ref_set], c='b', marker='.')
+
+
 
     for i,j in enumerate(results):
+        plt.subplot(1, len(results)+1, i+1)
+        plt.title(j)
+        plt.xlabel("$f_1(x)$")
+        plt.ylabel("$f_2(x)$")
+        plt.scatter([s.objectives[0] for s in ref_set],
+                    [s.objectives[1] for s in ref_set], c='b', marker='.')
+
+
+
         plt.scatter([s.objectives[0] for s in results[j][0]],
                     [s.objectives[1] for s in results[j][0]], c=colors[i], marker='.')
 
 
-    plt.subplot(1, 2, 2)
+    plt.subplot(1, len(results)+1, len(results)+1)
+    plt.title(type(problem).__name__)
     plt.xlabel("$evolution times$")
     plt.ylabel("$IGD$")
 
@@ -78,7 +78,7 @@ def compare_experiment(problem):
 
     # plt.legend(plots,['RL_NSGAII','NSGAII','SPEA2','NSGAIII'])
 
-    plt.savefig("../results/"+str(type(problem).__name__)+'_'+time.strftime("%m-%d_%H-%M-%S", time.gmtime())+".png",dpi=400)
+    plt.savefig("../results/"+str(type(problem).__name__)+'_'+time.strftime("%m-%d_%H-%M-%S", time.gmtime())+".png",dpi=300)
     # plt.show()
     plt.close()
 

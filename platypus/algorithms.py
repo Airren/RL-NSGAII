@@ -325,9 +325,6 @@ class RL_NSGAII(AbstractGeneticAlgorithm):
 
 
 
-        '''
-        非支配排序和拥挤度的计算
-        '''
         self.evaluate_all(offspring)
         self.nfe += self.population_size
 
@@ -451,6 +448,10 @@ class EpsMOEA(AbstractGeneticAlgorithm):
         for child in children:
             self._add_to_population(child)
             self.archive.add(child)
+
+        igd = InvertedGenerationalDistance(reference_set=self.ref_set)
+        igd_value = igd.calculate(self.result)
+        self.igd.append(igd_value)
             
     def _add_to_population(self, solution):
         dominates = []
@@ -608,6 +609,7 @@ class SPEA2(AbstractGeneticAlgorithm):
         offspring.extend(self.population)
         self._assign_fitness(offspring)
         self.population = self._truncate(offspring, self.population_size)
+
         igd = InvertedGenerationalDistance(reference_set=self.ref_set)
         igd_value = igd.calculate(self.result)
         self.igd.append(igd_value)
@@ -799,9 +801,14 @@ class MOEAD(AbstractGeneticAlgorithm):
                 self._update_solution(child, mating_indices)
                 
         self.generation += 1
+
         
         if self.update_utility is not None and self.update_utility >= 0 and self.generation % self.update_utility == 0:
             self._update_utility()
+
+        igd = InvertedGenerationalDistance(reference_set=self.ref_set)
+        igd_value = igd.calculate(self.result)
+        self.igd.append(igd_value)
 
 class NSGAIII(AbstractGeneticAlgorithm):
     
@@ -991,6 +998,266 @@ class NSGAIII(AbstractGeneticAlgorithm):
         self.igd.append(igd_value)
 
 
+class RL_NSGAIII(AbstractGeneticAlgorithm):
+
+    def __init__(self, problem,
+                 divisions_outer,
+                 divisions_inner=0,
+                 generator=RandomGenerator(),
+                 selector=TournamentSelector(2),
+                 variator=None,
+                 **kwargs):
+        super(RL_NSGAIII, self).__init__(problem, generator=generator, **kwargs)
+        self.selector = selector
+        self.variator = variator
+
+        self.population_size = choose(problem.nobjs + divisions_outer - 1, divisions_outer) + \
+                               (0 if divisions_inner == 0 else choose(problem.nobjs + divisions_inner - 1,
+                                                                      divisions_inner))
+        self.population_size = int(math.ceil(self.population_size / 4.0)) * 4
+
+        self.ideal_point = [POSITIVE_INFINITY] * problem.nobjs
+        self.reference_points = normal_boundary_weights(problem.nobjs, divisions_outer, divisions_inner)
+
+
+
+        self.actions = [str(i) for i in range(problem.nvars*2)]
+        self.RL = QLearningTable(actions=self.actions)
+
+
+
+        # NSGAIII currently only works on minimization problems
+        if any([d != Problem.MINIMIZE for d in problem.directions]):
+            raise PlatypusError("NSGAIII currently only works with minimization problems")
+
+    def _find_extreme_points(self, solutions, objective):
+        nobjs = self.problem.nobjs
+
+        weights = [0.000001] * nobjs
+        weights[objective] = 1.0
+
+        min_index = -1
+        min_value = POSITIVE_INFINITY
+
+        for i in range(len(solutions)):
+            objectives = solutions[i].normalized_objectives
+            value = max([objectives[j] / weights[j] for j in range(nobjs)])
+
+            if value < min_value:
+                min_index = i
+                min_value = value
+
+        return solutions[min_index]
+
+    def _associate_to_reference_point(self, solutions, reference_points):
+        result = [[] for _ in range(len(reference_points))]
+
+        for solution in solutions:
+            min_index = -1
+            min_distance = POSITIVE_INFINITY
+
+            for i in range(len(reference_points)):
+                distance = point_line_dist(solution.normalized_objectives, reference_points[i])
+
+                if distance < min_distance:
+                    min_index = i
+                    min_distance = distance
+
+            result[min_index].append(solution)
+
+        return result
+
+    def _find_minimum_distance(self, solutions, reference_point):
+        min_index = -1
+        min_distance = POSITIVE_INFINITY
+
+        for i in range(len(solutions)):
+            solution = solutions[i]
+            distance = point_line_dist(solution.normalized_objectives, reference_point)
+
+            if distance < min_distance:
+                min_index = i
+                min_distance = distance
+
+        return solutions[min_index]
+
+    def _reference_point_truncate(self, solutions, size):
+        nobjs = self.problem.nobjs
+
+        if len(solutions) > size:
+            result, remaining = nondominated_split(solutions, size)
+
+            # update the ideal point
+            for solution in solutions:
+                for i in range(nobjs):
+                    self.ideal_point[i] = min(self.ideal_point[i], solution.objectives[i])
+
+            # translate points by ideal point
+            for solution in solutions:
+                solution.normalized_objectives = [solution.objectives[i] - self.ideal_point[i] for i in range(nobjs)]
+
+            # find the extreme points
+            extreme_points = [self._find_extreme_points(solutions, i) for i in range(nobjs)]
+
+            # calculate the intercepts
+            degenerate = False
+
+            try:
+                b = [1.0] * nobjs
+                A = [s.normalized_objectives for s in extreme_points]
+                x = lsolve(A, b)
+                intercepts = [1.0 / i for i in x]
+            except:
+                degenerate = True
+
+            if not degenerate:
+                for i in range(nobjs):
+                    if intercepts[i] < 0.001:
+                        degenerate = True
+                        break
+
+            if degenerate:
+                intercepts = [-POSITIVE_INFINITY] * nobjs
+
+                for i in range(nobjs):
+                    intercepts[i] = max([s.normalized_objectives[i] for s in solutions] + [EPSILON])
+
+            # normalize objectives using intercepts
+            for solution in solutions:
+                solution.normalized_objectives = [solution.normalized_objectives[i] / intercepts[i] for i in
+                                                  range(nobjs)]
+
+            # associate each solution to a reference point
+            members = self._associate_to_reference_point(result, self.reference_points)
+            potential_members = self._associate_to_reference_point(remaining, self.reference_points)
+            excluded = set()
+
+            while len(result) < size:
+                # identify reference point with the fewest associated members
+                min_indices = []
+                min_count = sys.maxsize
+
+                for i in range(len(members)):
+                    if i not in excluded and len(members[i]) <= min_count:
+                        if len(members[i]) < min_count:
+                            min_indices = []
+                            min_count = len(members[i])
+                        min_indices.append(i)
+
+                # pick one randomly if there are multiple options
+                min_index = random.choice(min_indices)
+
+                # add associated solution
+                if min_count == 0:
+                    if len(potential_members[min_index]) == 0:
+                        excluded.add(min_index)
+                    else:
+                        min_solution = self._find_minimum_distance(potential_members[min_index],
+                                                                   self.reference_points[min_index])
+                        result.append(min_solution)
+                        members[min_index].append(min_solution)
+                        potential_members[min_index].remove(min_solution)
+                else:
+                    if len(potential_members[min_index]) == 0:
+                        excluded.add(min_index)
+                    else:
+                        rand_solution = random.choice(potential_members[min_index])
+                        result.append(rand_solution)
+                        members[min_index].append(rand_solution)
+                        potential_members[min_index].remove(rand_solution)
+
+            return result
+        else:
+            return solutions
+
+    def initialize(self):
+        super(RL_NSGAIII, self).initialize()
+
+        if self.variator is None:
+            self.variator = default_variator(self.problem)
+
+    def iterate(self):
+        offspring = []
+        #
+        # while len(offspring) < self.population_size:
+        #     parents = self.selector.select(self.variator.arity, self.population)
+        #     offspring.extend(self.variator.evolve(parents))
+
+        '''
+             通过Q_learning 改进交叉和变异的方法  促进种群的优化
+             '''
+        while len(offspring) < self.population_size:
+            parents = self.selector.select(self.variator.arity, self.population)
+
+            # 交叉变异产生 两个子代
+            child = self.variator.evolve(parents)
+            self.evaluate_local(child)
+            '''
+            学习阶段
+            '''
+            '''
+            状态是 目标函数的状态
+            '''
+            observation = str([int(i) for i in (child[0].objectives._data)])
+
+            action = self.RL.choose_action(observation, self.nfe / self.population_size)
+
+            child_2 = self.leaning_actions(action, child)
+
+            observation_ = str([int(i) for i in (child_2[0].objectives._data)])
+
+            self.evaluate_local(child_2)
+
+            '''
+            每次迭代通过  结果评价指标  给予一定的奖励
+            '''
+            reward = 0 - (sum(child_2[0].objectives._data))
+            self.RL.learn(observation, action, reward, observation_)
+
+            offspring.extend(child_2)
+
+        self.evaluate_all(offspring)
+        self.nfe += self.population_size
+
+        offspring.extend(self.population)
+        nondominated_sort(offspring)
+        self.population = self._reference_point_truncate(offspring, self.population_size)
+
+        igd = InvertedGenerationalDistance(reference_set=self.ref_set)
+        igd_value = igd.calculate(self.result)
+        self.igd.append(igd_value)
+
+    def leaning_actions(self,action,child):
+
+        '''
+        获得子代个体之后， 进行基因定向突变 通过Q learning 学习突变的有利方向
+        '''
+
+        child_2 = ''
+
+        # if (int(action) != len(self.actions) - 1):
+
+        location = int(action) // 2
+        action_method = int(action) % 2
+
+        child_1 = copy.deepcopy(child[0])
+        if action_method == 0:
+            child_1.variables[location] = 1 - (child_1.variables[location] * random.random())
+
+            child_1.evaluated = False
+            pass
+        else:
+            child_1.variables[location] = 1-(child_1.variables[location])
+
+            child_1.evaluated = False
+            pass
+
+        childs = [child_1, child[1]]
+
+        # else:
+        #     childs = child
+        return  childs
+
 class ParticleSwarm(Algorithm):
     
     __metaclass__ = ABCMeta
@@ -1156,6 +1423,10 @@ class OMOPSO(ParticleSwarm):
     def iterate(self):
         super(OMOPSO, self).iterate()
         self.archive += self.particles
+
+        igd = InvertedGenerationalDistance(reference_set=self.ref_set)
+        igd_value = igd.calculate(self.result)
+        self.igd.append(igd_value)
         
     def _mutate(self):
         for i in range(self.swarm_size):
@@ -1601,6 +1872,10 @@ class PAES(AbstractGeneticAlgorithm):
             if self.archive.add(offspring):
                 self.population = [self.test(parent, offspring)]
 
+        igd = InvertedGenerationalDistance(reference_set=self.ref_set)
+        igd_value = igd.calculate(self.result)
+        self.igd.append(igd_value)
+
     def test(self, parent, offspring):
         parent_index = self.archive.find_index(parent)
         offspring_index = self.archive.find_index(offspring)
@@ -1680,6 +1955,10 @@ class PESA2(AbstractGeneticAlgorithm):
             
         self.evaluate_all(self.population)
         self.archive.extend(self.population)
+
+        igd = InvertedGenerationalDistance(reference_set=self.ref_set)
+        igd_value = igd.calculate(self.result)
+        self.igd.append(igd_value)
                 
     def map_grid(self):
         result = {}

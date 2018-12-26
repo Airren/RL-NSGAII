@@ -192,6 +192,7 @@ def experiment(algorithms = [],
             results[job.algorithm_name][job.problem_name] = []
             
         results[job.algorithm_name][job.problem_name].append(job.instance.result)
+        results[job.algorithm_name][job.problem_name].append(job.instance.igd)
         count += 1
                 
     return results

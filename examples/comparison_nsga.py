@@ -3,28 +3,16 @@
 __author__ = 'Airren'
 __date__ = '2018-12-18 11:35'
 
-import pandas as pd
-import numpy as np
-import threading
 
-from scipy.interpolate import spline
-
-
-from platypus import NSGAII, Problem, Real
 
 import multiprocessing as mp
 
-
 from platypus import  *
-# import rl_nsgaii
-from examples import rl_nsgaii
-
+import rl_nsgaii
 
 problems= [ZDT1,ZDT2,ZDT3,ZDT4,ZDT6]
 with open('../results/igd.csv', 'a+') as F:
-    F.write('RL_NSGAII,NSGAII,SPEA2\n')
-
-
+    F.write(',RL_NSGAII,NSGAII,SPEA2,NSGAIII,\n')
 
 for problem in problems:
 
