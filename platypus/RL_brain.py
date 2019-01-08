@@ -17,7 +17,7 @@ class QLearningTable:
         self.epsilon = e_greedy
         self.q_table = pd.DataFrame(columns=self.actions, dtype=np.float64)
 
-        # self.q_table= pd.read_csv("../examples/q_table_zdt2.csv",index_col=0)
+
 
     def choose_action(self, observation,i):
         self.check_state_exist(observation)

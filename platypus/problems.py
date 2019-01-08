@@ -494,6 +494,16 @@ class WFG1(WFG):
         solution.variables[:] = [solution.variables[i] * 2.0 * (i+1) for i in range(self.nvars)]
         self.evaluate(solution)
         return solution
+    def get_ref_set(self):
+
+        ref_set = []
+        pf_true = pd.read_csv("../pareto_fronts/WFG1.2D.pf", sep=" ", header=-1, names=['f1', 'f2'], index_col=None,
+                    float_precision=14, usecols=[0, 1])
+        for i,row in pf_true.iterrows():
+            solution = Solution(ZDT1())
+            solution.objectives[:] = list(row)
+            ref_set.append(solution)
+        return  ref_set
 
 class WFG2(WFG):
     

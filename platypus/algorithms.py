@@ -228,9 +228,9 @@ class NSGAII(AbstractGeneticAlgorithm):
 
         # gd = GenerationalDistance(reference_set=self.ref_set)
         # gd_value = gd.calculate(self.result)
-        # print("GD:", gd_value)
+        # # print("GD:", gd_value)
         # self.gd.append(gd_value)
-        #
+        # #
         # # Calculate the performance metrics.
         # hyp = Hypervolume(reference_set=self.ref_set)
         # hyp_value = hyp.calculate(self.result)
@@ -262,6 +262,7 @@ class RL_NSGAII(AbstractGeneticAlgorithm):
 
         self.actions = [str(i) for i in range(problem.nvars*2)]
         self.RL = QLearningTable(actions=self.actions)
+        # self.RL.q_table = pd.read_csv("../examples/q_table_zdt2.csv", index_col=0)
 
 
 
@@ -304,13 +305,15 @@ class RL_NSGAII(AbstractGeneticAlgorithm):
             '''
             状态是 目标函数的状态
             '''
+            # observation = str([round(i,1) for i in (child[0].objectives._data)])
             observation = str([int(i) for i in (child[0].objectives._data)])
 
             action = self.RL.choose_action(observation,self.nfe/self.population_size)
 
             child_2 = self.leaning_actions(action,child)
 
-            observation_ = str([int(i) for i in (child_2[0].objectives._data )])
+            # observation_ = str([round(i,1) for i in (child_2[0].objectives._data )])
+            observation_ = str([int(i) for i in (child_2[0].objectives._data)])
 
             self.evaluate_local(child_2)
 
@@ -347,12 +350,11 @@ class RL_NSGAII(AbstractGeneticAlgorithm):
         # hyp_value = hyp.calculate(self.result)
         # # print("Hypervolume:", hyp_value)
         # self.hyp.append(hyp_value)
-        # #
+        # # #
         # gd = GenerationalDistance(reference_set=self.ref_set)
         # gd_value = gd.calculate(self.result)
-        # # print("GD:", gd_value)
         # self.gd.append(gd_value)
-        #
+        # #
         # aei = EpsilonIndicator(reference_set=self.ref_set)
         # aei_value = aei.calculate(self.result)
         # # print("Eps-Indicator:", aei.calculate(self.result))
@@ -367,6 +369,9 @@ class RL_NSGAII(AbstractGeneticAlgorithm):
 
 
 
+        self.RL.q_table.to_csv("../examples/q_table_zdt2.csv")
+
+
 
 
         if self.archive is not None:
@@ -377,30 +382,59 @@ class RL_NSGAII(AbstractGeneticAlgorithm):
         '''
         获得子代个体之后， 进行基因定向突变 通过Q learning 学习突变的有利方向
         '''
+        if (int(action) != len(self.actions) - 1):
 
-        child_2 = ''
+            location = int(action) // 2
+            action_method = int(action) % 2
 
-        # if (int(action) != len(self.actions) - 1):
+            child_1 = copy.deepcopy(child[0])
 
-        location = int(action) // 2
-        action_method = int(action) % 2
+            r = random.random()
+            mu = 1
+            if action_method == 0:
+                # Bigger
+                # if r <= 0.5:
+                #     alph = (2.0*r)**(1.0/(mu+1))
+                #
+                # else:
+                #     alph = (1.0/(2.0*(1-r)))**(1.0/(mu+1))
+                #
+                # child_1.variables[location] = (1+alph) * child_1.variables[location]
 
-        child_1 = copy.deepcopy(child[0])
-        if action_method == 0:
-            child_1.variables[location] = 1 - (child_1.variables[location] * random.random())
 
-            child_1.evaluated = False
-            pass
+
+                # child_1.variables[location] = 1 - (child_1.variables[location] * random.random())
+                child_1.variables[location] = child_1.variables[location]*(1+random.random())
+
+                child_1.evaluated = False
+                pass
+            else:
+                # Smaller
+
+                # child_1.variables[location] = 1-(child_1.variables[location])
+                # if r <= 0.5:
+                #     alph = (2.0*r)**(1.0/(mu+1))
+                #
+                # else:
+                #     alph = (1.0/(2.0*(1-r)))**(1.0/(mu+1))
+                #
+                # child_1.variables[location] = (alph) * child_1.variables[location]
+                #
+                child_1.variables[location] = child_1.variables[location] * (random.random())
+
+                child_1.evaluated = False
+                pass
+            #
+            # child_1.variables= np.max(np.vstack((child_1.variables, np.array([0]*len(child_1.variables)))), 0)
+            # child_1.variables = np.min(np.vstack((child_1.variables, np.array([1]*len(child_1.variables)))), 0)
+
+            child_1.variables = list(child_1.variables)
+            childs = [child_1, child[1]]
+
         else:
-            child_1.variables[location] = 1-(child_1.variables[location])
 
-            child_1.evaluated = False
-            pass
 
-        childs = [child_1, child[1]]
-
-        # else:
-        #     childs = child
+            childs = child
         return  childs
 
 
@@ -613,7 +647,192 @@ class SPEA2(AbstractGeneticAlgorithm):
         igd = InvertedGenerationalDistance(reference_set=self.ref_set)
         igd_value = igd.calculate(self.result)
         self.igd.append(igd_value)
-        
+
+
+class RL_SPEA2(AbstractGeneticAlgorithm):
+
+    def __init__(self, problem,
+                 population_size=100,
+                 generator=RandomGenerator(),
+                 variator=None,
+                 dominance=ParetoDominance(),
+                 k=1,
+                 **kwargs):
+        super(RL_SPEA2, self).__init__(problem, population_size, generator, **kwargs)
+        self.variator = variator
+        self.dominance = dominance
+        self.k = k
+        self.selection = TournamentSelector(2, dominance=AttributeDominance(fitness_key))
+
+        self.actions = [str(i) for i in range(problem.nvars * 2)]
+        self.RL = QLearningTable(actions=self.actions)
+
+    def _distance(self, solution1, solution2):
+        return math.sqrt(
+            sum([math.pow(solution2.objectives[i] - solution1.objectives[i], 2.0) for i in range(self.problem.nobjs)]))
+
+    def _assign_fitness(self, solutions):
+        strength = [0] * len(solutions)
+        fitness = [0.0] * len(solutions)
+
+        # compute dominance flags
+        keys = list(itertools.combinations(range(len(solutions)), 2))
+        flags = list(map(self.dominance.compare, [solutions[k[0]] for k in keys], [solutions[k[1]] for k in keys]))
+
+        # compute the distance matrix
+        distanceMatrix = DistanceMatrix(solutions)
+
+        # count the number of individuals each solution dominates
+        for key, flag in zip(keys, flags):
+            if flag < 0:
+                strength[key[0]] += 1
+            elif flag > 0:
+                strength[key[1]] += 1
+
+        # the raw fitness is the sum of the dominance counts (strength) of all
+        # dominated solutions
+        for key, flag in zip(keys, flags):
+            if flag < 0:
+                fitness[key[1]] += strength[key[0]]
+            elif flag > 0:
+                fitness[key[0]] += strength[key[1]]
+
+        # add density to fitness
+        for i in range(len(solutions)):
+            fitness[i] += 1.0 / (distanceMatrix.kth_distance(i, self.k) + 2.0)
+
+        # assign fitness attribute
+        for i in range(len(solutions)):
+            solutions[i].fitness = fitness[i]
+
+    def _truncate(self, solutions, size):
+        survivors = [s for s in solutions if s.fitness < 1.0]
+
+        if len(survivors) < size:
+            remaining = [s for s in solutions if s.fitness >= 1.0]
+            remaining = sorted(remaining, key=fitness_key)
+            survivors.extend(remaining[:(size - len(survivors))])
+        else:
+            distanceMatrix = DistanceMatrix(survivors)
+
+            while len(survivors) > size:
+                most_crowded = distanceMatrix.find_most_crowded()
+                distanceMatrix.remove_point(most_crowded)
+                del survivors[most_crowded]
+
+        return survivors
+
+    def initialize(self):
+        super(RL_SPEA2, self).initialize()
+        self._assign_fitness(self.population)
+
+        if self.variator is None:
+            self.variator = default_variator(self.problem)
+
+    def iterate(self):
+        offspring = []
+
+        while len(offspring) < self.population_size:
+            parents = self.selection.select(self.variator.arity, self.population)
+
+            # 交叉变异产生 两个子代
+            child = self.variator.evolve(parents)
+            self.evaluate_local(child)
+            '''
+            学习阶段
+            '''
+            '''
+            状态是 目标函数的状态
+            '''
+            # observation = str([round(i,1) for i in (child[0].objectives._data)])
+            observation = str([int(i) for i in (child[0].objectives._data)])
+
+            action = self.RL.choose_action(observation, self.nfe / self.population_size)
+
+            child_2 = self.leaning_actions(action, child)
+
+            # observation_ = str([round(i,1) for i in (child_2[0].objectives._data )])
+            observation_ = str([int(i) for i in (child_2[0].objectives._data)])
+
+            self.evaluate_local(child_2)
+
+            '''
+            每次迭代通过  结果评价指标  给予一定的奖励
+            '''
+            reward = 0 - (sum(child_2[0].objectives._data))
+            self.RL.learn(observation, action, reward, observation_)
+
+            offspring.extend(child_2)
+
+        self.evaluate_all(offspring)
+
+        offspring.extend(self.population)
+        self._assign_fitness(offspring)
+        self.population = self._truncate(offspring, self.population_size)
+
+        igd = InvertedGenerationalDistance(reference_set=self.ref_set)
+        igd_value = igd.calculate(self.result)
+        print(igd_value)
+        self.igd.append(igd_value)
+
+
+
+    def leaning_actions(self, action, child):
+
+        '''
+        获得子代个体之后， 进行基因定向突变 通过Q learning 学习突变的有利方向
+        '''
+        if (int(action) != len(self.actions) - 1):
+
+            location = int(action) // 2
+            action_method = int(action) % 2
+
+            child_1 = copy.deepcopy(child[0])
+
+            r = random.random()
+            mu = 1
+            if action_method == 0:
+                # Bigger
+                # if r <= 0.5:
+                #     alph = (2.0*r)**(1.0/(mu+1))
+                #
+                # else:
+                #     alph = (1.0/(2.0*(1-r)))**(1.0/(mu+1))
+                #
+                # child_1.variables[location] = (1+alph) * child_1.variables[location]
+
+                child_1.variables[location] = 1 - (child_1.variables[location] * random.random())
+                # child_1.variables[location] = child_1.variables[location]*(1+random.random())
+
+                child_1.evaluated = False
+                pass
+            else:
+                # Smaller
+
+                child_1.variables[location] = 1 - (child_1.variables[location])
+                # if r <= 0.5:
+                #     alph = (2.0*r)**(1.0/(mu+1))
+                #
+                # else:
+                #     alph = (1.0/(2.0*(1-r)))**(1.0/(mu+1))
+                #
+                # child_1.variables[location] = (alph) * child_1.variables[location]
+                #
+                # child_1.variables[location] = child_1.variables[location] * (random.random())
+
+                child_1.evaluated = False
+                pass
+            #
+            # child_1.variables= np.max(np.vstack((child_1.variables, np.array([0]*len(child_1.variables)))), 0)
+            # child_1.variables = np.min(np.vstack((child_1.variables, np.array([1]*len(child_1.variables)))), 0)
+
+            child_1.variables = list(child_1.variables)
+            childs = [child_1, child[1]]
+
+        else:
+
+            childs = child
+        return childs
 class MOEAD(AbstractGeneticAlgorithm):
     
     def __init__(self, problem,
@@ -1242,12 +1461,13 @@ class RL_NSGAIII(AbstractGeneticAlgorithm):
 
         child_1 = copy.deepcopy(child[0])
         if action_method == 0:
-            child_1.variables[location] = 1 - (child_1.variables[location] * random.random())
-
+            # child_1.variables[location] = 1 - (child_1.variables[location] * random.random())
+            child_1.variables[location] = child_1.variables[location] * (1 + random.random())
             child_1.evaluated = False
             pass
         else:
-            child_1.variables[location] = 1-(child_1.variables[location])
+            # child_1.variables[location] = 1-(child_1.variables[location])
+            child_1.variables[location] = child_1.variables[location] * (random.random())
 
             child_1.evaluated = False
             pass

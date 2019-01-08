@@ -18,7 +18,7 @@ def compare_experiment(problem):
     times = 200
     ref_set = problem.get_ref_set()
 
-    algorithms = [RL_NSGAII,NSGAII,SPEA2,(NSGAIII,100)]
+    algorithms = [RL_NSGAII,NSGAII]
 
 
     # Corlor Table https://www.cnblogs.com/darkknightzh/p/6117528.html
@@ -56,12 +56,12 @@ def compare_experiment(problem):
         plt.xlabel("$f_1(x)$")
         plt.ylabel("$f_2(x)$")
         plt.scatter([s.objectives[0] for s in ref_set],
-                    [s.objectives[1] for s in ref_set], c='b', marker='.')
+                    [s.objectives[1] for s in ref_set], c='b', marker='.',s=0.5)
 
 
 
         plt.scatter([s.objectives[0] for s in results[j][0]],
-                    [s.objectives[1] for s in results[j][0]], c=colors[i], marker='.')
+                    [s.objectives[1] for s in results[j][0]], c=colors[i], marker='.',s=0.5)
 
 
     plt.subplot(1, len(results)+1, len(results)+1)
@@ -71,6 +71,7 @@ def compare_experiment(problem):
 
     for i, j in enumerate(results):
         plt.plot(list(range(len(results[j][1]))), results[j][1], c=colors[i], marker="",label=j)
+        print(results[j][1][-1])
 
 
 
@@ -89,12 +90,8 @@ def compare_experiment(problem):
             F.write(str(results[i][1][-1])+ ',')
         F.write('\n')
 
-
-
-
-
 if __name__ == "__main__":
-    compare_experiment(ZDT2())
+    compare_experiment(WFG1())
 
 
 
