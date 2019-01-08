@@ -15,7 +15,7 @@ from platypus import  *
 
 def compare_experiment(problem):
 
-    times = 200
+    times = 50
     pup = 100
     ref_set = problem.get_ref_set()
 
@@ -33,7 +33,7 @@ def compare_experiment(problem):
         # (OMOPSO, {"epsilons": [0.05]}),
         # SMPSO,
         # RL_SPEA2,
-        SPEA2,
+        # SPEA2,
         # (EpsMOEA, {"epsilons": [0.05]})
     ]
 
@@ -61,16 +61,16 @@ def compare_experiment(problem):
         plt.xlabel("$f_1(x)$")
         plt.ylabel("$f_2(x)$")
         plt.scatter([k.objectives[0] for k in ref_set],
-                    [k.objectives[1] for k in ref_set], c='b', marker='.',linewidths = '0.01',)
+                    [k.objectives[1] for k in ref_set], c='b', marker='.',s=1,)
 
         plt.scatter([k.objectives[0] for k in result],
-                    [k.objectives[1] for k in result], c=colors[i], marker='.',linewidths = '0.01',)
+                    [k.objectives[1] for k in result], c=colors[i], marker='.',s=3,)
 
 
 
     plt.subplot(1, len(results)+1, len(results)+1)
     plt.title(type(problem).__name__)
-    plt.xlabel("$evolution times$")
+    plt.xlabel("$Generations$")
     plt.ylabel("$IGD$")
 
     for i, algorithm in enumerate(six.iterkeys(results)):
@@ -95,7 +95,7 @@ def compare_experiment(problem):
 
 
 if __name__ == "__main__":
-    compare_experiment(WFG1(2))
+    compare_experiment(ZDT1())
 
 
 

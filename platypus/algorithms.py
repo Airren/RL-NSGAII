@@ -425,8 +425,8 @@ class RL_NSGAII(AbstractGeneticAlgorithm):
                 child_1.evaluated = False
                 pass
             #
-            # child_1.variables= np.max(np.vstack((child_1.variables, np.array([0]*len(child_1.variables)))), 0)
-            # child_1.variables = np.min(np.vstack((child_1.variables, np.array([1]*len(child_1.variables)))), 0)
+            child_1.variables= np.max(np.vstack((child_1.variables, np.array([0]*len(child_1.variables)))), 0)
+            child_1.variables = np.min(np.vstack((child_1.variables, np.array([1]*len(child_1.variables)))), 0)
 
             child_1.variables = list(child_1.variables)
             childs = [child_1, child[1]]
@@ -1451,31 +1451,59 @@ class RL_NSGAIII(AbstractGeneticAlgorithm):
         '''
         获得子代个体之后， 进行基因定向突变 通过Q learning 学习突变的有利方向
         '''
+        if (int(action) != len(self.actions) - 1):
 
-        child_2 = ''
+            location = int(action) // 2
+            action_method = int(action) % 2
 
-        # if (int(action) != len(self.actions) - 1):
+            child_1 = copy.deepcopy(child[0])
 
-        location = int(action) // 2
-        action_method = int(action) % 2
+            r = random.random()
+            mu = 1
+            if action_method == 0:
+                # Bigger
+                # if r <= 0.5:
+                #     alph = (2.0*r)**(1.0/(mu+1))
+                #
+                # else:
+                #     alph = (1.0/(2.0*(1-r)))**(1.0/(mu+1))
+                #
+                # child_1.variables[location] = (1+alph) * child_1.variables[location]
 
-        child_1 = copy.deepcopy(child[0])
-        if action_method == 0:
-            # child_1.variables[location] = 1 - (child_1.variables[location] * random.random())
-            child_1.variables[location] = child_1.variables[location] * (1 + random.random())
-            child_1.evaluated = False
-            pass
+
+
+                # child_1.variables[location] = 1 - (child_1.variables[location] * random.random())
+                child_1.variables[location] = child_1.variables[location]*(1+random.random())
+
+                child_1.evaluated = False
+                pass
+            else:
+                # Smaller
+
+                # child_1.variables[location] = 1-(child_1.variables[location])
+                # if r <= 0.5:
+                #     alph = (2.0*r)**(1.0/(mu+1))
+                #
+                # else:
+                #     alph = (1.0/(2.0*(1-r)))**(1.0/(mu+1))
+                #
+                # child_1.variables[location] = (alph) * child_1.variables[location]
+                #
+                child_1.variables[location] = child_1.variables[location] * (random.random())
+
+                child_1.evaluated = False
+                pass
+            #
+            child_1.variables= np.max(np.vstack((child_1.variables, np.array([0]*len(child_1.variables)))), 0)
+            child_1.variables = np.min(np.vstack((child_1.variables, np.array([1]*len(child_1.variables)))), 0)
+
+            child_1.variables = list(child_1.variables)
+            childs = [child_1, child[1]]
+
         else:
-            # child_1.variables[location] = 1-(child_1.variables[location])
-            child_1.variables[location] = child_1.variables[location] * (random.random())
 
-            child_1.evaluated = False
-            pass
 
-        childs = [child_1, child[1]]
-
-        # else:
-        #     childs = child
+            childs = child
         return  childs
 
 class ParticleSwarm(Algorithm):

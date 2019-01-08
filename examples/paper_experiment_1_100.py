@@ -14,16 +14,16 @@ import paper_experiment
 
 problems= [ZDT1,ZDT2,ZDT3,ZDT4,ZDT6]
 with open('../results/igd.csv', 'a+') as F:
-    F.write(',RL_NSGAII,NSGAII,RL_NSGAIII,NSGAIII,SPEA2,\n')
+    F.write(',RL_NSGAII,NSGAII,RL_NSGAIII,NSGAIII\n')
 
 for problem in problems:
 
-    for j in range(6):
+    for j in range(3):
 
         processes = []
-        for i in range(20):
+        for i in range(35):
             processes.append(mp.Process(target= paper_experiment.compare_experiment,args=(problem(),)))
-        for i in range(20):
+        for i in range(35):
             processes[i].start()
-        for i in range(20):
+        for i in range(35):
             processes[i].join()
