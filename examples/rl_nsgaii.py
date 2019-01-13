@@ -15,10 +15,10 @@ from platypus import  *
 
 def compare_experiment(problem):
 
-    times = 200
+    times = 10
     ref_set = problem.get_ref_set()
 
-    algorithms = [RL_NSGAII,NSGAII]
+    algorithms = [RL_NSGAII,NSGAII,(RL_NSGAIII,100)]
 
 
     # Corlor Table https://www.cnblogs.com/darkknightzh/p/6117528.html
@@ -61,7 +61,7 @@ def compare_experiment(problem):
 
 
         plt.scatter([s.objectives[0] for s in results[j][0]],
-                    [s.objectives[1] for s in results[j][0]], c=colors[i], marker='.',s=0.5)
+                    [s.objectives[1] for s in results[j][0]], c=colors[i], marker='x')
 
 
     plt.subplot(1, len(results)+1, len(results)+1)
@@ -91,7 +91,7 @@ def compare_experiment(problem):
         F.write('\n')
 
 if __name__ == "__main__":
-    compare_experiment(WFG1())
+    compare_experiment(ZDT2())
 
 
 

@@ -15,7 +15,7 @@ from platypus import  *
 
 def compare_experiment(problem):
 
-    times = 50
+    times = 100
     pup = 100
     ref_set = problem.get_ref_set()
 
@@ -64,7 +64,7 @@ def compare_experiment(problem):
                     [k.objectives[1] for k in ref_set], c='b', marker='.',s=1,)
 
         plt.scatter([k.objectives[0] for k in result],
-                    [k.objectives[1] for k in result], c=colors[i], marker='.',s=3,)
+                    [k.objectives[1] for k in result], c=colors[i], marker='x')
 
 
 
@@ -76,6 +76,7 @@ def compare_experiment(problem):
     for i, algorithm in enumerate(six.iterkeys(results)):
         result = results[algorithm][type(problem).__name__][1]
         plt.plot(list(range(len(result))), result, c=colors[i], marker="",label=algorithm,linewidth = '1',)
+        pd.Series(result).to_csv("../results/"+str(type(problem).__name__)+"_"+time.strftime("%m-%d_%H-%M-%S", time.gmtime())+'_'+str(algorithm)+".csv")
     plt.legend(loc=1)
 
     plt.savefig("../results/"+str(type(problem).__name__)+'_'+time.strftime("%m-%d_%H-%M-%S", time.gmtime())+".png",dpi=300)
@@ -95,7 +96,7 @@ def compare_experiment(problem):
 
 
 if __name__ == "__main__":
-    compare_experiment(ZDT1())
+    compare_experiment(ZDT2())
 
 
 
