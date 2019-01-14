@@ -260,7 +260,7 @@ class RL_NSGAII(AbstractGeneticAlgorithm):
 
 
 
-        self.actions = [str(i) for i in range(problem.nvars + 1)]
+        self.actions = [str(i) for i in range(problem.nvars*2 + 1)]
         self.RL = QLearningTable(actions=self.actions)
         # self.RL.q_table = pd.read_csv("../examples/q_table_zdt2.csv", index_col=0)
 
@@ -299,32 +299,22 @@ class RL_NSGAII(AbstractGeneticAlgorithm):
             # 交叉变异产生 两个子代
             child = self.variator.evolve(parents)
             self.evaluate_local(child)
-            '''
-            学习阶段
-            '''
-            '''
-            状态是 目标函数的状态
-            '''
-            # observation = str([round(i,1) for i in (child[0].objectives._data)])
-            observation = str([int(i) for i in (child[0].objectives._data)])
-
-            action = self.RL.choose_action(observation,self.nfe/self.population_size)
-
-            child_2 = self.leaning_actions(action,child)
-
-            # observation_ = str([round(i,1) for i in (child_2[0].objectives._data )])
-            observation_ = str([int(i) for i in (child_2[0].objectives._data)])
-
-            self.evaluate_local(child_2)
-
-            '''
-            每次迭代通过  结果评价指标  给予一定的奖励
-            '''
-            reward = 0 - (sum(child_2[0].objectives._data))
-            self.RL.learn(observation, action, reward, observation_)
+            if self.nfe/self.population_size <=100:
+                print(self.nfe / self.population_size)
+                observation = str([round(i,1) for i in (child[0].objectives._data)])
+                # observation = str([int(i) for i in (child[0].objectives._data)])
+                action = self.RL.choose_action(observation,self.nfe/self.population_size)
+                child_2 = self.leaning_actions(action,child)
+                observation_ = str([round(i,1) for i in (child_2[0].objectives._data )])
+                # observation_ = str([int(i) for i in (child_2[0].objectives._data)])
+                self.evaluate_local(child_2)
+                reward = 0 - (sum(child_2[0].objectives._data))
+                self.RL.learn(observation, action, reward, observation_)
 
 
-            offspring.extend(child_2)
+                offspring.extend(child_2)
+            else:
+                offspring.extend(child)
 
 
 
@@ -373,7 +363,7 @@ class RL_NSGAII(AbstractGeneticAlgorithm):
 
         if self.archive is not None:
             self.archive.extend(self.population)
-    def leaning_actions(self,action,child):
+    def leaning_actions_bak(self,action,child):
         if (int(action) != len(self.actions) - 1):
             location = int(action)
             child_1 = copy.deepcopy(child[0])
@@ -385,63 +375,20 @@ class RL_NSGAII(AbstractGeneticAlgorithm):
         return  childs
 
 
-    def leaning_actions_bak(self,action,child):
-
-        '''
-        获得子代个体之后， 进行基因定向突变 通过Q learning 学习突变的有利方向
-        '''
+    def leaning_actions(self,action,child):
         if (int(action) != len(self.actions) - 1):
-
             location = int(action) // 2
             action_method = int(action) % 2
-
             child_1 = copy.deepcopy(child[0])
-
-            r = random.random()
-            mu = 1
             if action_method == 0:
-                # Bigger
-                # if r <= 0.5:
-                #     alph = (2.0*r)**(1.0/(mu+1))
-                #
-                # else:
-                #     alph = (1.0/(2.0*(1-r)))**(1.0/(mu+1))
-                #
-                # child_1.variables[location] = (1+alph) * child_1.variables[location]
-
-
-
-                # child_1.variables[location] = 1 - (child_1.variables[location] * random.random())
-                child_1.variables[location] = child_1.variables[location]*(1+random.random())
-
+                child_1.variables[location] = self.problem.types[location].max_value - (child_1.variables[location] * random.random())
                 child_1.evaluated = False
-                pass
             else:
-                # Smaller
-
-                # child_1.variables[location] = 1-(child_1.variables[location])
-                # if r <= 0.5:
-                #     alph = (2.0*r)**(1.0/(mu+1))
-                #
-                # else:
-                #     alph = (1.0/(2.0*(1-r)))**(1.0/(mu+1))
-                #
-                # child_1.variables[location] = (alph) * child_1.variables[location]
-                #
-                child_1.variables[location] = child_1.variables[location] * (random.random())
-
+                child_1.variables[location] = self.problem.types[location].max_value - (child_1.variables[location])
                 child_1.evaluated = False
                 pass
-            #
-            child_1.variables= np.max(np.vstack((child_1.variables, np.array([0]*len(child_1.variables)))), 0)
-            child_1.variables = np.min(np.vstack((child_1.variables, np.array([1]*len(child_1.variables)))), 0)
-
-            child_1.variables = list(child_1.variables)
             childs = [child_1, child[1]]
-
         else:
-
-
             childs = child
         return  childs
 
@@ -1247,7 +1194,7 @@ class RL_NSGAIII(AbstractGeneticAlgorithm):
         self.reference_points = normal_boundary_weights(problem.nobjs, divisions_outer, divisions_inner)
 
 
-        self.actions = [str(i) for i in range(problem.nvars + 1)]
+        self.actions = [str(i) for i in range(problem.nvars*2 + 1)]
         self.RL = QLearningTable(actions=self.actions)
 
 
@@ -1414,33 +1361,24 @@ class RL_NSGAIII(AbstractGeneticAlgorithm):
              '''
         while len(offspring) < self.population_size:
             parents = self.selector.select(self.variator.arity, self.population)
-
-            # 交叉变异产生 两个子代
             child = self.variator.evolve(parents)
             self.evaluate_local(child)
-            '''
-            学习阶段
-            '''
-            '''
-            状态是 目标函数的状态
-            '''
-            observation = str([int(i) for i in (child[0].objectives._data)])
+            if self.nfe / self.population_size <= 100:
+                print(self.nfe / self.population_size)
+                observation = str([round(i, 1) for i in (child[0].objectives._data)])
+                # observation = str([int(i) for i in (child[0].objectives._data)])
+                action = self.RL.choose_action(observation, self.nfe / self.population_size)
+                child_2 = self.leaning_actions(action, child)
+                observation_ = str([round(i, 1) for i in (child_2[0].objectives._data)])
+                # observation_ = str([int(i) for i in (child_2[0].objectives._data)])
+                self.evaluate_local(child_2)
+                reward = 0 - (sum(child_2[0].objectives._data))
+                self.RL.learn(observation, action, reward, observation_)
 
-            action = self.RL.choose_action(observation, self.nfe / self.population_size)
+                offspring.extend(child_2)
+            else:
 
-            child_2 = self.leaning_actions(action, child)
-
-            observation_ = str([int(i) for i in (child_2[0].objectives._data)])
-
-            self.evaluate_local(child_2)
-
-            '''
-            每次迭代通过  结果评价指标  给予一定的奖励
-            '''
-            reward = 0 - (sum(child_2[0].objectives._data))
-            self.RL.learn(observation, action, reward, observation_)
-
-            offspring.extend(child_2)
+                offspring.extend(child)
 
         self.evaluate_all(offspring)
         self.nfe += self.population_size
@@ -1453,17 +1391,22 @@ class RL_NSGAIII(AbstractGeneticAlgorithm):
         igd_value = igd.calculate(self.result)
         self.igd.append(igd_value)
 
-    def leaning_actions(self, action, child):
-        if (int(action) != len(self.actions)-1):
-            location = int(action)
+    def leaning_actions(self,action,child):
+        if (int(action) != len(self.actions) - 1):
+            location = int(action) // 2
+            action_method = int(action) % 2
             child_1 = copy.deepcopy(child[0])
-            child_1.variables[location] = self.problem.types[location].max_value - \
-                                          (child_1.variables[location] * random.random())
-            child_1.evaluated = False
+            if action_method == 0:
+                child_1.variables[location] = self.problem.types[location].max_value - (child_1.variables[location] * random.random())
+                child_1.evaluated = False
+            else:
+                child_1.variables[location] = self.problem.types[location].max_value - (child_1.variables[location])
+                child_1.evaluated = False
+                pass
             childs = [child_1, child[1]]
         else:
             childs = child
-        return childs
+        return  childs
 
 class ParticleSwarm(Algorithm):
     

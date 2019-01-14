@@ -4,8 +4,6 @@
     <list default="true" id="e7aba7b6-d480-46d9-9630-a718a7bf4008" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/paper_experiment.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/paper_experiment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/paper_experiment_1_100.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/paper_experiment_1_100.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/rl_nsgaii.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/rl_nsgaii.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/platypus/algorithms.py" beforeDir="false" afterPath="$PROJECT_DIR$/platypus/algorithms.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,15 +20,16 @@
     <SUITE FILE_PATH="coverage/Platypus_master$NSGAII.coverage" NAME="NSGAII Coverage Results" MODIFIED="1545046163065" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NSGA_RL" />
     <SUITE FILE_PATH="coverage/Platypus_master$setup.coverage" NAME="setup Coverage Results" MODIFIED="1542009642746" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Platypus_master$nsga.coverage" NAME="nsga Coverage Results" MODIFIED="1544083534315" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Platypus_master$analysis_result.coverage" NAME="analysis_result Coverage Results" MODIFIED="1547438647573" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/Platypus_master$comparison.coverage" NAME="comparison Coverage Results" MODIFIED="1545712034170" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/Platypus_master$rl_nsgaiipy.coverage" NAME="rl_nsgaiipy Coverage Results" MODIFIED="1547391765912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/Platypus_master$comparison_nsga.coverage" NAME="comparison_nsga Coverage Results" MODIFIED="1545729760554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/Platypus_master$tst.coverage" NAME="tst Coverage Results" MODIFIED="1546412656184" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
-    <SUITE FILE_PATH="coverage/Platypus_master$result_boxplot.coverage" NAME="result_boxplot Coverage Results" MODIFIED="1546926986579" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
+    <SUITE FILE_PATH="coverage/Platypus_master$result_boxplot.coverage" NAME="result_boxplot Coverage Results" MODIFIED="1547428718895" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/Platypus_master$AnimatedScatter.coverage" NAME="AnimatedScatter Coverage Results" MODIFIED="1544078928436" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Platypus_master$constrained_problem_1.coverage" NAME="constrained_problem_1 Coverage Results" MODIFIED="1545103845711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/Platypus_master$paper_experiment_1_100.coverage" NAME="paper_experiment_1_100 Coverage Results" MODIFIED="1546480697352" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
-    <SUITE FILE_PATH="coverage/Platypus_master$paper_experiment.coverage" NAME="paper_experiment Coverage Results" MODIFIED="1547393174746" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
+    <SUITE FILE_PATH="coverage/Platypus_master$paper_experiment.coverage" NAME="paper_experiment Coverage Results" MODIFIED="1547442773849" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/Platypus_master$example.coverage" NAME="example Coverage Results" MODIFIED="1542009681236" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Platypus_master$experimenter_parallel.coverage" NAME="experimenter_parallel Coverage Results" MODIFIED="1542700168910" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/Platypus_master$simple_indicators.coverage" NAME="simple_indicators Coverage Results" MODIFIED="1545111985913" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
@@ -43,11 +42,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/platypus/algorithms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="445">
+              <caret line="302" column="54" selection-start-line="302" selection-start-column="54" selection-end-line="302" selection-end-column="54" />
+              <folding>
+                <element signature="e#819#883#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/examples/paper_experiment.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1326">
-              <caret line="78" column="144" selection-start-line="78" selection-start-column="144" selection-end-line="78" selection-end-column="144" />
+            <state relative-caret-position="289">
+              <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
               <folding>
                 <element signature="e#99#118#0" expanded="true" />
               </folding>
@@ -55,8 +66,13 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/results/ZDT2_01-14_05-14-10.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/results/ZDT2_01-13_15-23-46.png">
+        <entry file="file://$PROJECT_DIR$/results/ZDT2_01-14_05-10-41.png">
           <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
@@ -130,6 +146,7 @@
         <option value="$PROJECT_DIR$/results/igd.csv" />
         <option value="$PROJECT_DIR$/examples/paper_experiment_1_100.py" />
         <option value="$PROJECT_DIR$/examples/rl_nsgaii.py" />
+        <option value="$PROJECT_DIR$/examples/analysis_result.py" />
         <option value="$PROJECT_DIR$/platypus/algorithms.py" />
         <option value="$PROJECT_DIR$/examples/paper_experiment.py" />
       </list>
@@ -171,35 +188,6 @@
             <path>
               <item name="Platypus-master" type="b2602c69:ProjectViewProjectNode" />
               <item name="Platypus-master" type="462c0819:PsiDirectoryNode" />
-              <item name="examples" type="462c0819:PsiDirectoryNode" />
-              <item name="plot_operators.py" type="8704e2dd:PyFileNode" />
-            </path>
-            <path>
-              <item name="Platypus-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Platypus-master" type="462c0819:PsiDirectoryNode" />
-              <item name="examples" type="462c0819:PsiDirectoryNode" />
-              <item name="rl_nsgaii.py" type="8704e2dd:PyFileNode" />
-            </path>
-            <path>
-              <item name="Platypus-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Platypus-master" type="462c0819:PsiDirectoryNode" />
-              <item name="examples" type="462c0819:PsiDirectoryNode" />
-              <item name="SBX.py" type="8704e2dd:PyFileNode" />
-            </path>
-            <path>
-              <item name="Platypus-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Platypus-master" type="462c0819:PsiDirectoryNode" />
-              <item name="NSGA_RL" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Platypus-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Platypus-master" type="462c0819:PsiDirectoryNode" />
-              <item name="NSGA_RL" type="462c0819:PsiDirectoryNode" />
-              <item name="QLearning.py" type="8704e2dd:PyFileNode" />
-            </path>
-            <path>
-              <item name="Platypus-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Platypus-master" type="462c0819:PsiDirectoryNode" />
               <item name="platypus" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -221,26 +209,6 @@
               <item name="platypus" type="462c0819:PsiDirectoryNode" />
               <item name="algorithms.py" type="8704e2dd:PyFileNode" />
               <item name="RL_NSGAIII" type="dd8bbb05:PyElementNode" />
-            </path>
-            <path>
-              <item name="Platypus-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Platypus-master" type="462c0819:PsiDirectoryNode" />
-              <item name="platypus" type="462c0819:PsiDirectoryNode" />
-              <item name="core.py" type="8704e2dd:PyFileNode" />
-            </path>
-            <path>
-              <item name="Platypus-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Platypus-master" type="462c0819:PsiDirectoryNode" />
-              <item name="platypus" type="462c0819:PsiDirectoryNode" />
-              <item name="core.py" type="8704e2dd:PyFileNode" />
-              <item name="FixedLengthArray" type="dd8bbb05:PyElementNode" />
-            </path>
-            <path>
-              <item name="Platypus-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Platypus-master" type="462c0819:PsiDirectoryNode" />
-              <item name="platypus" type="462c0819:PsiDirectoryNode" />
-              <item name="core.py" type="8704e2dd:PyFileNode" />
-              <item name="Mutation" type="dd8bbb05:PyElementNode" />
             </path>
             <path>
               <item name="Platypus-master" type="b2602c69:ProjectViewProjectNode" />
@@ -350,22 +318,19 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="comparison_nsga" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="analysis_result" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Platypus-master" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/examples" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/examples/comparison_nsga.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/examples/analysis_result.py" />
       <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
@@ -485,18 +450,18 @@
     <list>
       <item itemvalue="Python.result_boxplot" />
       <item itemvalue="Python.rl_nsgaiipy" />
-      <item itemvalue="Python.comparison_nsga" />
       <item itemvalue="Python.tst" />
       <item itemvalue="Python.paper_experiment" />
       <item itemvalue="Python.paper_experiment_1_100" />
+      <item itemvalue="Python.analysis_result" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.paper_experiment" />
+        <item itemvalue="Python.analysis_result" />
         <item itemvalue="Python.rl_nsgaiipy" />
         <item itemvalue="Python.paper_experiment_1_100" />
         <item itemvalue="Python.tst" />
-        <item itemvalue="Python.comparison_nsga" />
       </list>
     </recent_temporary>
   </component>
@@ -535,7 +500,7 @@
       <workItem from="1546412123070" duration="30584000" />
       <workItem from="1546572402914" duration="1228000" />
       <workItem from="1546779046143" duration="14833000" />
-      <workItem from="1547373607960" duration="7301000" />
+      <workItem from="1547373607960" duration="15814000" />
     </task>
     <task id="LOCAL-00001" summary="add igd to SPEA2">
       <created>1545717418152</created>
@@ -579,7 +544,14 @@
       <option name="project" value="LOCAL" />
       <updated>1546917081295</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="修改 强化学习动作">
+      <created>1547393274565</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1547393274565</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -588,7 +560,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="216721000" />
+    <option name="totallyTimeSpent" value="225234000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-1080" width="1920" height="1080" extended-state="0" />
@@ -614,7 +586,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" sideWeight="0.48907563" weight="0.23109691" />
+      <window_info anchor="right" id="SciView" order="3" sideWeight="0.48907563" visible="true" weight="0.23109691" />
       <window_info anchor="right" id="R Graphics" order="4" weight="0.32967034" />
       <window_info anchor="right" id="R Packages" order="5" weight="0.32967034" />
       <window_info anchor="right" id="Database" order="6" />
@@ -657,7 +629,8 @@
     <MESSAGE value="add RL_NSGAIII" />
     <MESSAGE value="changed the structure of experiment" />
     <MESSAGE value=" experiment generations 50" />
-    <option name="LAST_COMMIT_MESSAGE" value=" experiment generations 50" />
+    <MESSAGE value="修改 强化学习动作" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改 强化学习动作" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -752,6 +725,11 @@
           <line>77</line>
           <option name="timeStamp" value="140" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/examples/analysis_result.py</url>
+          <line>40</line>
+          <option name="timeStamp" value="144" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -763,132 +741,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/results/WFG1_01-07_09-49-05.png" />
-    <entry file="file://$PROJECT_DIR$/results/WFG1_01-07_09-49-27.png" />
-    <entry file="file://$PROJECT_DIR$/results/ZDT1_01-06_15-18-55.png" />
-    <entry file="file://$PROJECT_DIR$/results/results.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/ZDT1_01-08_02-47-43.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/ZDT1_01-08_02-49-20.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/ZDT1_01-08_02-50-02.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/ZDT1_01-08_02-50-23.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/ZDT1_01-08_02-51-55.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/ZDT1_01-08_02-53-01.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/plot_operators.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-623" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/ZDT1_01-08_02-48-29.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/box_ZDT6.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/ZDT1_01-08_02-52-31.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/platypus/RL_brain.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="50" column="41" lean-forward="true" selection-start-line="50" selection-start-column="41" selection-end-line="50" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/q_table_zdt2.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/result_boxplot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/copy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="138" selection-start-line="138" selection-end-line="138" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/ZDT2_01-13_14-12-01.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/ZDT2_01-13_14-17-36.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/ZDT2_01-13_14-14-49.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/ZDT2_01-13_14-20-15.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/ZDT2_01-13_14-21-37.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/ZDT2_01-13_14-24-39.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/ZDT2_01-13_14-29-23.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/ZDT2_01-13_14-28-00.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/platypus/operators.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1433">
-          <caret line="152" selection-start-line="152" selection-end-line="152" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/platypus/core.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="76" selection-start-line="76" selection-end-line="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/concurrent/futures/process.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="174" selection-start-line="174" selection-end-line="174" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/ZDT2_01-13_14-38-55.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/ZDT2_01-13_14-47-41.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/ZDT2_01-13_14-49-33.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/ZDT2_01-13_14-48-40.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/ZDT2_01-13_15-03-45.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/results/ZDT2_01-13_15-05-30.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -919,10 +771,66 @@
         <state relative-caret-position="-1026" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/results/box_ZDT1.png">
+    <entry file="file://$PROJECT_DIR$/results/ZDT2_01-13_15-21-37.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/results/box_ZDT2.png">
+    <entry file="file://$PROJECT_DIR$/results/ZDT2_01-13_15-23-46.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/ZDT2_01-13_15-27-38.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/igd.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/results.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="1688" selection-start-line="1688" selection-end-line="1688" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/result_boxplot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" selection-start-line="10" selection-end-line="10" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="308" selection-start-line="308" selection-end-line="308" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/analysis_result.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#99#120#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/box_ZDT_350.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/box_ZDT_250.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/box_ZDT_150.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/box_ZDT6.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/results/box_ZDT4.png">
@@ -931,22 +839,60 @@
     <entry file="file://$PROJECT_DIR$/results/box_ZDT3.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/results/igd.csv">
+    <entry file="file://$PROJECT_DIR$/results/box_ZDT2.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/box_ZDT1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NSGA_RL/result2.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/ZDT2_01-14_04-17-53.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/ZDT2_01-14_04-19-23.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/ZDT2_01-14_04-21-17.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/ZDT2_01-14_04-48-29.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/ZDT2_01-14_04-50-14.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/q_table_zdt2.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/ZDT2_01-14_04-51-52.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/ZDT2_01-14_04-53-30_NSGAII.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8642" />
+        <state relative-caret-position="-1077" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/platypus/algorithms.py">
+    <entry file="file://$PROJECT_DIR$/results/ZDT2_01-14_04-53-30_NSGAIII.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="1456" column="48" selection-start-line="1456" selection-start-column="48" selection-end-line="1456" selection-end-column="48" />
-          <folding>
-            <element signature="e#819#883#0" expanded="true" />
-          </folding>
-        </state>
+        <state relative-caret-position="-1026" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/results/ZDT2_01-13_15-21-37.png">
+    <entry file="file://$PROJECT_DIR$/results/ZDT2_01-14_04-53-30_RL_NSGAII.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1077" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/ZDT2_01-14_04-53-30_RL_NSGAIII.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1026" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/ZDT2_01-14_04-53-30.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/ZDT2_01-14_04-59-08.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/examples/paper_experiment_1_100.py">
@@ -959,18 +905,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/results/ZDT2_01-13_15-23-46.png">
+    <entry file="file://$PROJECT_DIR$/results/ZDT2_01-14_05-01-22.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/ZDT1_01-14_05-03-03.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/ZDT1_01-14_05-05-00.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/ZDT2_01-14_05-08-59.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/platypus/algorithms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="302" column="54" selection-start-line="302" selection-start-column="54" selection-end-line="302" selection-end-column="54" />
+          <folding>
+            <element signature="e#819#883#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/ZDT2_01-14_05-10-41_RL_NSGAII.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1077" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/ZDT2_01-14_05-10-41_RL_NSGAIII.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1026" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/ZDT2_01-14_05-10-41_NSGAII.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/ZDT2_01-14_05-10-41_NSGAIII.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/ZDT2_01-14_05-10-41.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/examples/paper_experiment.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1326">
-          <caret line="78" column="144" selection-start-line="78" selection-start-column="144" selection-end-line="78" selection-end-column="144" />
+        <state relative-caret-position="289">
+          <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
           <folding>
             <element signature="e#99#118#0" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/ZDT2_01-14_05-14-10.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
   </component>
 </project>
