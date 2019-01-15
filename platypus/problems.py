@@ -142,16 +142,7 @@ class DTLZ2(Problem):
         
         solution.objectives[:] = f
 
-    def get_ref_set(self):
-        ref_set = []
-        pf_true = pd.read_csv("../pareto_fronts/DTLZ2.3D.pf", sep="\t", header=None, names=['f1', 'f2','f3'],index_col=None,
-                              float_precision=14,
-                              usecols=[0,1,2])
-        for i,row in pf_true.iterrows():
-            solution = Solution(DTLZ2(3))
-            solution.objectives[:] = list(row)
-            ref_set.append(solution)
-        return ref_set
+
         
     def random(self):
         solution = Solution(self)
@@ -159,6 +150,15 @@ class DTLZ2(Problem):
         solution.variables[self.nobjs-1:] = 0.5
         solution.evaluate()
         return solution
+    def get_ref_set(self):
+        ref_set = []
+        pf_true = pd.read_csv("../pareto_fronts/DTLZ2.2D.pf", sep="\t", header=-1, names=['f1', 'f2'], index_col=None,
+                    float_precision=14, usecols=[0, 1])
+        for row in pf_true.iterrows():
+            solution = Solution(TwoObjectives())
+            solution.objectives[:] = list(row[1])
+            ref_set.append(solution)
+        return  ref_set
         
 class DTLZ3(Problem):
     
@@ -258,7 +258,7 @@ class DTLZ7(Problem):
         return solution
     def get_ref_set(self):
         ref_set = []
-        pf_true = pd.read_csv("../pareto_fronts/DTLZ7.2D.pf", sep="\t", header=-1, names=['f1', 'f2'], index_col=None,
+        pf_true = pd.read_csv("../pareto_fronts/DTLZ7.2D.pf", sep=" ", header=-1, names=['f1', 'f2'], index_col=None,
                     float_precision=14, usecols=[0, 1])
         for row in pf_true.iterrows():
             solution = Solution(Schaffer())

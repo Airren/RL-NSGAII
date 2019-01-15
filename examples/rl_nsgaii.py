@@ -91,7 +91,7 @@ def compare_experiment(problem):
         F.write('\n')
 
 if __name__ == "__main__":
-    compare_experiment(DTLZ1(2))
+    compare_experiment(DTLZ7(2))
 
 
 
