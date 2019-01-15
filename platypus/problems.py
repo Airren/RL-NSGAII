@@ -106,7 +106,7 @@ class DTLZ1(Problem):
         return solution
     def get_ref_set(self):
         ref_set = []
-        pf_true = pd.read_csv("../pareto_fronts/DTLZ1.3D.pf", sep="\t", header=-1, names=['f1', 'f2','f3'], index_col=None,
+        pf_true = pd.read_csv("../pareto_fronts/DTLZ1.2D.pf", sep="\t", header=-1, names=['f1', 'f2','f3'], index_col=None,
                     float_precision=14, usecols=[0, 1, 2])
         for row in pf_true.iterrows():
             solution = Solution(ThreeObjectives())

@@ -12,7 +12,8 @@ from platypus import  *
 # from examples import paper_experiment
 import paper_experiment
 
-problems= [ZDT1,ZDT2,ZDT3,ZDT4,ZDT6]
+# problems= [ZDT1,ZDT2,ZDT3,ZDT4,ZDT6]
+problems = [DTLZ1,DTLZ2,DTLZ3,DTLZ4,DTLZ7]
 with open('../results/igd.csv', 'w+') as F:
     F.write(',RL_NSGAII,NSGAII,RL_NSGAIII,NSGAIII\n')
 
