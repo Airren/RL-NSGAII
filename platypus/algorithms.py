@@ -300,7 +300,7 @@ class RL_NSGAII(AbstractGeneticAlgorithm):
             child = self.variator.evolve(parents)
             self.evaluate_local(child)
             if self.nfe/self.population_size <=200:
-                print(self.nfe / self.population_size)
+                # print(self.nfe / self.population_size)
                 observation = str([round(i,1) for i in (child[0].objectives._data)])
                 # observation = str([int(i) for i in (child[0].objectives._data)])
                 action = self.RL.choose_action(observation,self.nfe/self.population_size)
@@ -1364,7 +1364,7 @@ class RL_NSGAIII(AbstractGeneticAlgorithm):
             child = self.variator.evolve(parents)
             self.evaluate_local(child)
             if self.nfe / self.population_size <= 200:
-                print(self.nfe / self.population_size)
+                # print(self.nfe / self.population_size)
                 observation = str([round(i, 1) for i in (child[0].objectives._data)])
                 # observation = str([int(i) for i in (child[0].objectives._data)])
                 action = self.RL.choose_action(observation, self.nfe / self.population_size)

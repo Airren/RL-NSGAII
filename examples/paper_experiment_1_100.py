@@ -23,7 +23,7 @@ for problem in problems:
 
         processes = []
         for i in range(38):
-            processes.append(mp.Process(target= paper_experiment.compare_experiment,args=(problem(),)))
+            processes.append(mp.Process(target= paper_experiment.compare_experiment,args=(problem(2),)))
         for i in range(38):
             processes[i].start()
         for i in range(38):

@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e7aba7b6-d480-46d9-9630-a718a7bf4008" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/paper_experiment.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/paper_experiment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/rl_nsgaii.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/rl_nsgaii.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/paper_experiment_1_100.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/paper_experiment_1_100.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/platypus/algorithms.py" beforeDir="false" afterPath="$PROJECT_DIR$/platypus/algorithms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/platypus/problems.py" beforeDir="false" afterPath="$PROJECT_DIR$/platypus/problems.py" afterDir="false" />
     </list>
@@ -24,12 +23,12 @@
     <SUITE FILE_PATH="coverage/Platypus_master$nsga.coverage" NAME="nsga Coverage Results" MODIFIED="1544083534315" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Platypus_master$analysis_result.coverage" NAME="analysis_result Coverage Results" MODIFIED="1547438647573" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/Platypus_master$comparison.coverage" NAME="comparison Coverage Results" MODIFIED="1545712034170" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
-    <SUITE FILE_PATH="coverage/Platypus_master$rl_nsgaiipy.coverage" NAME="rl_nsgaiipy Coverage Results" MODIFIED="1547391765912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
+    <SUITE FILE_PATH="coverage/Platypus_master$rl_nsgaiipy.coverage" NAME="rl_nsgaiipy Coverage Results" MODIFIED="1547543955402" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/Platypus_master$comparison_nsga.coverage" NAME="comparison_nsga Coverage Results" MODIFIED="1545729760554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/Platypus_master$tst.coverage" NAME="tst Coverage Results" MODIFIED="1546412656184" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/Platypus_master$paper_experiment_3D.coverage" NAME="paper_experiment_3D Coverage Results" MODIFIED="1547457089062" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/Platypus_master$rl_nsgaii_3D.coverage" NAME="rl_nsgaii_3D Coverage Results" MODIFIED="1547456791772" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
-    <SUITE FILE_PATH="coverage/Platypus_master$result_boxplot.coverage" NAME="result_boxplot Coverage Results" MODIFIED="1547531363817" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
+    <SUITE FILE_PATH="coverage/Platypus_master$result_boxplot.coverage" NAME="result_boxplot Coverage Results" MODIFIED="1547542940301" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/Platypus_master$AnimatedScatter.coverage" NAME="AnimatedScatter Coverage Results" MODIFIED="1544078928436" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Platypus_master$constrained_problem_1.coverage" NAME="constrained_problem_1 Coverage Results" MODIFIED="1545103845711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/Platypus_master$paper_experiment_1_100.coverage" NAME="paper_experiment_1_100 Coverage Results" MODIFIED="1546480697352" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
@@ -49,8 +48,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/examples/result_boxplot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+            <state relative-caret-position="366">
+              <caret line="24" column="16" lean-forward="true" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
               <folding>
                 <element signature="e#100#119#0" expanded="true" />
               </folding>
@@ -58,11 +57,62 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/examples/paper_experiment.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="311">
+              <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="104" />
+              <folding>
+                <element signature="e#99#118#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/results/box_ZDT3.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/results/box_ZDT4.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/results/box_ZDT6.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/examples/rl_nsgaii.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="79" column="40" selection-start-line="79" selection-start-column="40" selection-end-line="79" selection-end-column="40" />
+              <folding>
+                <element signature="e#99#118#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/examples/paper_experiment_1_100.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="25" column="99" selection-start-line="25" selection-start-column="99" selection-end-line="25" selection-end-column="99" />
+              <folding>
+                <element signature="e#101#129#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/platypus/algorithms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="1365" column="51" selection-start-line="1365" selection-start-column="51" selection-end-line="1365" selection-end-column="51" />
+            <state relative-caret-position="262">
+              <caret line="333" selection-start-line="333" selection-end-line="333" />
               <folding>
                 <element signature="e#819#883#0" expanded="true" />
               </folding>
@@ -71,27 +121,21 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/results/igd.csv">
+        <entry file="file://$PROJECT_DIR$/platypus/problems.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+            <state relative-caret-position="493">
+              <caret line="40" column="27" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/results/DTLZ1_01-14_09-31-42.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/results/WFG1_01-14_07-11-50.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/results/WFG2_01-14_07-14-40.png">
-          <provider selected="true" editor-type-id="images" />
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/results/results.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -161,14 +205,14 @@
         <option value="$PROJECT_DIR$/platypus/RL_brain.py" />
         <option value="$PROJECT_DIR$/examples/result_boxplot.py" />
         <option value="$PROJECT_DIR$/results/igd.csv" />
-        <option value="$PROJECT_DIR$/examples/paper_experiment_1_100.py" />
         <option value="$PROJECT_DIR$/examples/analysis_result.py" />
-        <option value="$PROJECT_DIR$/examples/rl_nsgaii.py" />
         <option value="$PROJECT_DIR$/examples/paper_experiment.py" />
-        <option value="$PROJECT_DIR$/platypus/problems.py" />
-        <option value="$PROJECT_DIR$/examples/rl_nsgaii_3D.py" />
         <option value="$PROJECT_DIR$/examples/paper_experiment_3D.py" />
+        <option value="$PROJECT_DIR$/examples/rl_nsgaii_3D.py" />
+        <option value="$PROJECT_DIR$/examples/rl_nsgaii.py" />
+        <option value="$PROJECT_DIR$/examples/paper_experiment_1_100.py" />
         <option value="$PROJECT_DIR$/platypus/algorithms.py" />
+        <option value="$PROJECT_DIR$/platypus/problems.py" />
       </list>
     </option>
   </component>
@@ -209,50 +253,17 @@
               <item name="Platypus-master" type="b2602c69:ProjectViewProjectNode" />
               <item name="Platypus-master" type="462c0819:PsiDirectoryNode" />
               <item name="examples" type="462c0819:PsiDirectoryNode" />
-              <item name="paper_experiment_3D.py" type="8704e2dd:PyFileNode" />
-            </path>
-            <path>
-              <item name="Platypus-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Platypus-master" type="462c0819:PsiDirectoryNode" />
-              <item name="examples" type="462c0819:PsiDirectoryNode" />
-              <item name="plot_operators.py" type="8704e2dd:PyFileNode" />
-            </path>
-            <path>
-              <item name="Platypus-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Platypus-master" type="462c0819:PsiDirectoryNode" />
-              <item name="examples" type="462c0819:PsiDirectoryNode" />
               <item name="rl_nsgaii.py" type="8704e2dd:PyFileNode" />
             </path>
             <path>
               <item name="Platypus-master" type="b2602c69:ProjectViewProjectNode" />
               <item name="Platypus-master" type="462c0819:PsiDirectoryNode" />
-              <item name="examples" type="462c0819:PsiDirectoryNode" />
-              <item name="rl_nsgaii_3D.py" type="8704e2dd:PyFileNode" />
+              <item name="nsga2_differrent_version" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Platypus-master" type="b2602c69:ProjectViewProjectNode" />
               <item name="Platypus-master" type="462c0819:PsiDirectoryNode" />
-              <item name="platypus" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Platypus-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Platypus-master" type="462c0819:PsiDirectoryNode" />
-              <item name="platypus" type="462c0819:PsiDirectoryNode" />
-              <item name="algorithms.py" type="8704e2dd:PyFileNode" />
-            </path>
-            <path>
-              <item name="Platypus-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Platypus-master" type="462c0819:PsiDirectoryNode" />
-              <item name="platypus" type="462c0819:PsiDirectoryNode" />
-              <item name="algorithms.py" type="8704e2dd:PyFileNode" />
-              <item name="RL_NSGAII" type="dd8bbb05:PyElementNode" />
-            </path>
-            <path>
-              <item name="Platypus-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Platypus-master" type="462c0819:PsiDirectoryNode" />
-              <item name="platypus" type="462c0819:PsiDirectoryNode" />
-              <item name="algorithms.py" type="8704e2dd:PyFileNode" />
-              <item name="RL_NSGAIII" type="dd8bbb05:PyElementNode" />
+              <item name="results" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Platypus-master" type="b2602c69:ProjectViewProjectNode" />
@@ -294,7 +305,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.result_boxplot">
+  <component name="RunManager" selected="Python.rl_nsgaiipy">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="Platypus-master" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -450,11 +461,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.rl_nsgaiipy" />
         <item itemvalue="Python.paper_experiment_3D" />
         <item itemvalue="Python.rl_nsgaii_3D" />
         <item itemvalue="Python.paper_experiment" />
         <item itemvalue="Python.analysis_result" />
-        <item itemvalue="Python.rl_nsgaiipy" />
       </list>
     </recent_temporary>
   </component>
@@ -493,7 +504,7 @@
       <workItem from="1546412123070" duration="30584000" />
       <workItem from="1546572402914" duration="1228000" />
       <workItem from="1546779046143" duration="14833000" />
-      <workItem from="1547373607960" duration="26130000" />
+      <workItem from="1547373607960" duration="28716000" />
     </task>
     <task id="LOCAL-00001" summary="add igd to SPEA2">
       <created>1545717418152</created>
@@ -551,7 +562,21 @@
       <option name="project" value="LOCAL" />
       <updated>1547443072751</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="变异操作 明确，接下来大量实验验证2">
+      <created>1547534303615</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1547534303615</updated>
+    </task>
+    <task id="LOCAL-00010" summary="变异操作 明确，接下来大量实验验证3">
+      <created>1547543315506</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1547543315506</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -560,7 +585,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="235550000" />
+    <option name="totallyTimeSpent" value="238136000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-1080" width="1920" height="1080" extended-state="0" />
@@ -572,7 +597,7 @@
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="0" weight="0.32970297" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" />
-      <window_info anchor="bottom" id="Run" order="3" visible="true" weight="0.27425742" />
+      <window_info anchor="bottom" id="Run" order="3" visible="true" weight="0.46138614" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.45544556" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -631,7 +656,9 @@
     <MESSAGE value=" experiment generations 50" />
     <MESSAGE value="修改 强化学习动作" />
     <MESSAGE value="变异操作 明确，接下来大量实验验证" />
-    <option name="LAST_COMMIT_MESSAGE" value="变异操作 明确，接下来大量实验验证" />
+    <MESSAGE value="变异操作 明确，接下来大量实验验证2" />
+    <MESSAGE value="变异操作 明确，接下来大量实验验证3" />
+    <option name="LAST_COMMIT_MESSAGE" value="变异操作 明确，接下来大量实验验证3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -683,12 +710,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/platypus/problems.py</url>
-          <line>1802</line>
+          <line>1809</line>
           <option name="timeStamp" value="93" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/platypus/problems.py</url>
-          <line>142</line>
+          <line>149</line>
           <option name="timeStamp" value="95" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -731,6 +758,36 @@
           <line>40</line>
           <option name="timeStamp" value="144" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/examples/rl_nsgaii_3D.py</url>
+          <line>22</line>
+          <option name="timeStamp" value="152" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/platypus/algorithms.py</url>
+          <line>999</line>
+          <option name="timeStamp" value="154" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/platypus/algorithms.py</url>
+          <line>1157</line>
+          <option name="timeStamp" value="155" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/platypus/algorithms.py</url>
+          <line>1151</line>
+          <option name="timeStamp" value="156" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/examples/paper_experiment.py</url>
+          <line>18</line>
+          <option name="timeStamp" value="157" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/platypus/problems.py</url>
+          <line>121</line>
+          <option name="timeStamp" value="158" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -742,11 +799,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/results/ZDT2_01-14_05-10-41_RL_NSGAIII.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1026" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/results/ZDT2_01-14_05-10-41_NSGAII.csv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -800,13 +852,6 @@
     <entry file="file://$PROJECT_DIR$/results/WFG5_01-14_07-30-02.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/results/results.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/results/WFG2_01-14_07-15-35.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -820,16 +865,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="1" lean-forward="true" selection-start-column="1" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/paper_experiment.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="104" />
-          <folding>
-            <element signature="e#99#118#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -864,13 +899,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/platypus/problems.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="109" column="40" selection-start-line="109" selection-start-column="40" selection-end-line="109" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Documents/data_analysis_env/lib/python3.6/site-packages/matplotlib/projections/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-303">
@@ -894,25 +922,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/examples/rl_nsgaii.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="55" column="8" selection-start-line="55" selection-start-column="8" selection-end-line="56" selection-end-column="30" />
-          <folding>
-            <element signature="e#99#118#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/results/DTLZ1_01-14_09-24-54.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/rl_nsgaii_3D.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" selection-start-line="9" selection-end-line="9" selection-end-column="39" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/examples/paper_experiment_3D.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -933,8 +944,22 @@
     <entry file="file://$PROJECT_DIR$/results/WFG2_01-14_07-14-40.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/results/box_ZDT6.png">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="file://$PROJECT_DIR$/examples/rl_nsgaii_3D.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#99#118#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/igd.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/results/box_ZDT1.png">
       <provider selected="true" editor-type-id="images" />
@@ -948,30 +973,70 @@
     <entry file="file://$PROJECT_DIR$/results/box_ZDT4.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/results/igd.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/results/box_ZDT6.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/examples/result_boxplot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+        <state relative-caret-position="366">
+          <caret line="24" column="16" lean-forward="true" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
           <folding>
             <element signature="e#100#119#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/examples/paper_experiment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="104" />
+          <folding>
+            <element signature="e#99#118#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/paper_experiment_1_100.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="99" selection-start-line="25" selection-start-column="99" selection-end-line="25" selection-end-column="99" />
+          <folding>
+            <element signature="e#101#129#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/platypus/algorithms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="1365" column="51" selection-start-line="1365" selection-start-column="51" selection-end-line="1365" selection-end-column="51" />
+        <state relative-caret-position="262">
+          <caret line="333" selection-start-line="333" selection-end-line="333" />
           <folding>
             <element signature="e#819#883#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/rl_nsgaii.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="79" column="40" selection-start-line="79" selection-start-column="40" selection-end-line="79" selection-end-column="40" />
+          <folding>
+            <element signature="e#99#118#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/platypus/problems.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="40" column="27" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/results.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>
