@@ -35,6 +35,14 @@ from abc import ABCMeta
 # SCH Problems
 ################################################################################
 
+class ThreeObjectives(Problem):
+    # _instance_lock = threading.Lock()
+
+    def __init__(self):
+        super(ThreeObjectives, self).__init__(1, 3)
+        self.types[:] = Real(-10, 10)
+
+
 
 class Schaffer(Problem):
     # _instance_lock = threading.Lock()
@@ -96,6 +104,15 @@ class DTLZ1(Problem):
         solution.variables[self.nobjs-1:] = 0.5
         solution.evaluate()
         return solution
+    def get_ref_set(self):
+        ref_set = []
+        pf_true = pd.read_csv("../pareto_fronts/DTLZ1.3D.pf", sep="\t", header=-1, names=['f1', 'f2','f3'], index_col=None,
+                    float_precision=14, usecols=[0, 1, 2])
+        for row in pf_true.iterrows():
+            solution = Solution(ThreeObjectives())
+            solution.objectives[:] = list(row[1])
+            ref_set.append(solution)
+        return  ref_set
 
 class DTLZ2(Problem):
     
@@ -163,6 +180,15 @@ class DTLZ3(Problem):
         solution.variables[self.nobjs-1:] = 0.5
         solution.evaluate()
         return solution
+    def get_ref_set(self):
+        ref_set = []
+        pf_true = pd.read_csv("../pareto_fronts/DTLZ3.2D.pf", sep="\t", header=-1, names=['f1', 'f2'], index_col=None,
+                    float_precision=14, usecols=[0, 1])
+        for row in pf_true.iterrows():
+            solution = Solution(Schaffer())
+            solution.objectives[:] = list(row[1])
+            ref_set.append(solution)
+        return  ref_set
         
 class DTLZ4(Problem):
     
@@ -192,6 +218,15 @@ class DTLZ4(Problem):
         solution.variables[self.nobjs-1:] = 0.5
         solution.evaluate()
         return solution
+    def get_ref_set(self):
+        ref_set = []
+        pf_true = pd.read_csv("../pareto_fronts/DTLZ4.2D.pf", sep="\t", header=-1, names=['f1', 'f2'], index_col=None,
+                    float_precision=14, usecols=[0, 1])
+        for row in pf_true.iterrows():
+            solution = Solution(Schaffer())
+            solution.objectives[:] = list(row[1])
+            ref_set.append(solution)
+        return  ref_set
         
         
 class DTLZ7(Problem):
@@ -214,6 +249,15 @@ class DTLZ7(Problem):
         solution.variables[self.nobjs-1:] = 0.0
         solution.evaluate()
         return solution
+    def get_ref_set(self):
+        ref_set = []
+        pf_true = pd.read_csv("../pareto_fronts/DTLZ7.2D.pf", sep="\t", header=-1, names=['f1', 'f2'], index_col=None,
+                    float_precision=14, usecols=[0, 1])
+        for row in pf_true.iterrows():
+            solution = Solution(Schaffer())
+            solution.objectives[:] = list(row[1])
+            ref_set.append(solution)
+        return  ref_set
         
         
 ################################################################################
@@ -525,6 +569,16 @@ class WFG2(WFG):
         solution.variables[:] = [solution.variables[i] * 2.0 * (i+1) for i in range(self.nvars)]
         self.evaluate(solution)
         return solution
+    def get_ref_set(self):
+
+        ref_set = []
+        pf_true = pd.read_csv("../pareto_fronts/WFG2.2D.pf", sep="	", header=-1, names=['f1', 'f2'], index_col=None,
+                    float_precision=14, usecols=[0, 1])
+        for i,row in pf_true.iterrows():
+            solution = Solution(ZDT1())
+            solution.objectives[:] = list(row)
+            ref_set.append(solution)
+        return  ref_set
     
 class WFG3(WFG):
     
@@ -546,6 +600,16 @@ class WFG3(WFG):
         solution.variables[:] = [solution.variables[i] * 2.0 * (i+1) for i in range(self.nvars)]
         self.evaluate(solution)
         return solution
+    def get_ref_set(self):
+
+        ref_set = []
+        pf_true = pd.read_csv("../pareto_fronts/WFG3.2D.pf", sep=" ", header=-1, names=['f1', 'f2'], index_col=None,
+                    float_precision=14, usecols=[0, 1])
+        for i,row in pf_true.iterrows():
+            solution = Solution(ZDT1())
+            solution.objectives[:] = list(row)
+            ref_set.append(solution)
+        return  ref_set
     
 class WFG4(WFG):
     
@@ -566,6 +630,16 @@ class WFG4(WFG):
         solution.variables[:] = [solution.variables[i] * 2.0 * (i+1) for i in range(self.nvars)]
         self.evaluate(solution)
         return solution
+
+    def get_ref_set(self):
+        ref_set = []
+        pf_true = pd.read_csv("../pareto_fronts/WFG4.2D.pf", sep=" ", header=-1, names=['f1', 'f2'], index_col=None,
+                              float_precision=14, usecols=[0, 1])
+        for i, row in pf_true.iterrows():
+            solution = Solution(ZDT1())
+            solution.objectives[:] = list(row)
+            ref_set.append(solution)
+        return ref_set
     
 class WFG5(WFG):
     
@@ -586,6 +660,15 @@ class WFG5(WFG):
         solution.variables[:] = [solution.variables[i] * 2.0 * (i+1) for i in range(self.nvars)]
         self.evaluate(solution)
         return solution
+    def get_ref_set(self):
+        ref_set = []
+        pf_true = pd.read_csv("../pareto_fronts/WFG5.2D.pf", sep=" ", header=-1, names=['f1', 'f2'], index_col=None,
+                              float_precision=14, usecols=[0, 1])
+        for i, row in pf_true.iterrows():
+            solution = Solution(ZDT1())
+            solution.objectives[:] = list(row)
+            ref_set.append(solution)
+        return ref_set
     
 class WFG6(WFG):
     
@@ -606,6 +689,15 @@ class WFG6(WFG):
         solution.variables[:] = [solution.variables[i] * 2.0 * (i+1) for i in range(self.nvars)]
         self.evaluate(solution)
         return solution
+    def get_ref_set(self):
+        ref_set = []
+        pf_true = pd.read_csv("../pareto_fronts/WFG6.2D.pf", sep=" ", header=-1, names=['f1', 'f2'], index_col=None,
+                              float_precision=14, usecols=[0, 1])
+        for i, row in pf_true.iterrows():
+            solution = Solution(ZDT1())
+            solution.objectives[:] = list(row)
+            ref_set.append(solution)
+        return ref_set
     
 class WFG7(WFG):
     
@@ -627,6 +719,15 @@ class WFG7(WFG):
         solution.variables[:] = [solution.variables[i] * 2.0 * (i+1) for i in range(self.nvars)]
         self.evaluate(solution)
         return solution
+    def get_ref_set(self):
+        ref_set = []
+        pf_true = pd.read_csv("../pareto_fronts/WFG7.2D.pf", sep=" ", header=-1, names=['f1', 'f2'], index_col=None,
+                              float_precision=14, usecols=[0, 1])
+        for i, row in pf_true.iterrows():
+            solution = Solution(ZDT1())
+            solution.objectives[:] = list(row)
+            ref_set.append(solution)
+        return ref_set
     
 class WFG8(WFG):
     
@@ -657,6 +758,15 @@ class WFG8(WFG):
         solution.variables[:] = result
         self.evaluate(solution)
         return solution
+    def get_ref_set(self):
+        ref_set = []
+        pf_true = pd.read_csv("../pareto_fronts/WFG8.2D.pf", sep=" ", header=-1, names=['f1', 'f2'], index_col=None,
+                              float_precision=14, usecols=[0, 1])
+        for i, row in pf_true.iterrows():
+            solution = Solution(ZDT1())
+            solution.objectives[:] = list(row)
+            ref_set.append(solution)
+        return ref_set
     
 class WFG9(WFG):
     
@@ -686,6 +796,15 @@ class WFG9(WFG):
         solution.variables[:] = result
         self.evaluate(solution)
         return solution
+    def get_ref_set(self):
+        ref_set = []
+        pf_true = pd.read_csv("../pareto_fronts/WFG9.2D.pf", sep=" ", header=-1, names=['f1', 'f2'], index_col=None,
+                              float_precision=14, usecols=[0, 1])
+        for i, row in pf_true.iterrows():
+            solution = Solution(ZDT1())
+            solution.objectives[:] = list(row)
+            ref_set.append(solution)
+        return ref_set
     
 ################################################################################
 # CEC 2009 Problems

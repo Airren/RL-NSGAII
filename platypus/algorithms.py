@@ -299,7 +299,7 @@ class RL_NSGAII(AbstractGeneticAlgorithm):
             # 交叉变异产生 两个子代
             child = self.variator.evolve(parents)
             self.evaluate_local(child)
-            if self.nfe/self.population_size <=100:
+            if self.nfe/self.population_size <=200:
                 print(self.nfe / self.population_size)
                 observation = str([round(i,1) for i in (child[0].objectives._data)])
                 # observation = str([int(i) for i in (child[0].objectives._data)])
@@ -1363,7 +1363,7 @@ class RL_NSGAIII(AbstractGeneticAlgorithm):
             parents = self.selector.select(self.variator.arity, self.population)
             child = self.variator.evolve(parents)
             self.evaluate_local(child)
-            if self.nfe / self.population_size <= 100:
+            if self.nfe / self.population_size <= 200:
                 print(self.nfe / self.population_size)
                 observation = str([round(i, 1) for i in (child[0].objectives._data)])
                 # observation = str([int(i) for i in (child[0].objectives._data)])
