@@ -24,7 +24,7 @@ class QLearningTable:
 
 
 
-        self.epsilon = i * 0.01
+        self.epsilon = i * 0.001
         # action selection
         if np.random.uniform() < self.epsilon:
             # choose best action

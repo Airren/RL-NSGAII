@@ -16,28 +16,30 @@ with open('../results/results.csv','w') as F:
 
 algorithms = list(igd.columns)
 
-for i in ['ZDT1','ZDT2','ZDT3','ZDT4','ZDT6']:
-    if i in set(igd.index):
+# for i in ['ZDT1','ZDT2','ZDT3','ZDT4','ZDT6']:
+
+for i in set(igd.index):
+
+    with open('../results/results.csv', 'a+') as F:
+        F.write(i + ',')
+    box_data = igd.ix[i,:]
+
+    # a = box_data.ix[i, 'RL_NSGAII']
+    # b = box_data.ix[i, 'NSGAII']
+    # c = box_data.ix[i,'RL_NSGAIII']
+    # d = box_data.ix[i,'NSGAIII']
+    # e = box_data.ix[i, 'SPEA2']
+    for j in algorithms:
         with open('../results/results.csv', 'a+') as F:
-            F.write(i + ',')
-        box_data = igd.ix[i,:]
-
-        # a = box_data.ix[i, 'RL_NSGAII']
-        # b = box_data.ix[i, 'NSGAII']
-        # c = box_data.ix[i,'RL_NSGAIII']
-        # d = box_data.ix[i,'NSGAIII']
-        # e = box_data.ix[i, 'SPEA2']
-        for j in algorithms:
-            with open('../results/results.csv', 'a+') as F:
-                F.write(str(np.mean(box_data.ix[i, j]))+','+str(np.var(box_data.ix[i, j]))+'\n')
+            F.write(str(np.mean(box_data.ix[i, j]))+','+str(np.var(box_data.ix[i, j]))+'\n')
 
 
 
-        # box_data.boxplot()
-        igd.ix[i, :].boxplot()
-        plt.ylabel("IGD")
-        plt.xlabel(i)
-        plt.savefig("../results/box_" + i + ".png",dpi=400)
-        plt.close()
+    # box_data.boxplot()
+    igd.ix[i, :].boxplot()
+    plt.ylabel("IGD")
+    plt.xlabel(i)
+    plt.savefig("../results/box_" + i + ".png",dpi=400)
+    plt.close()
 
 print("SUCCESS")
