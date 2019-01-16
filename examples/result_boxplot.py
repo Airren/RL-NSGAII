@@ -7,7 +7,7 @@ __date__ = '2018-12-21 19:15'
 import pandas as pd
 import numpy as np
 
-from scipy import stats
+# from scipy import stats
 import matplotlib.pyplot as plt
 
 igd = pd.read_csv('../results/igd.csv',index_col=0,usecols=[0,1,2,3,4])

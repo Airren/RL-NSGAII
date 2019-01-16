@@ -217,15 +217,13 @@ class NSGAII(AbstractGeneticAlgorithm):
         nondominated_sort(offspring)
         self.population = nondominated_truncate(offspring, self.population_size)
 
-
-        '''
-        收敛过程中的评价指标
-        '''
         igd = InvertedGenerationalDistance(reference_set=self.ref_set)
         igd_value = igd.calculate(self.result)
-        # print("IGD:", igd_value)
         self.igd.append(igd_value)
 
+        hyp = Hypervolume(reference_set=self.ref_set)
+        hyp_value = hyp.calculate(self.result)
+        self.hyp.append(hyp_value)
         # gd = GenerationalDistance(reference_set=self.ref_set)
         # gd_value = gd.calculate(self.result)
         # # print("GD:", gd_value)
@@ -335,11 +333,10 @@ class RL_NSGAII(AbstractGeneticAlgorithm):
         igd_value = igd.calculate(self.result)
         self.igd.append(igd_value)
 
-        # # Calculate the performance metrics.
-        # hyp = Hypervolume(reference_set=self.ref_set)
-        # hyp_value = hyp.calculate(self.result)
-        # # print("Hypervolume:", hyp_value)
-        # self.hyp.append(hyp_value)
+
+        hyp = Hypervolume(reference_set=self.ref_set)
+        hyp_value = hyp.calculate(self.result)
+        self.hyp.append(hyp_value)
         # # #
         # gd = GenerationalDistance(reference_set=self.ref_set)
         # gd_value = gd.calculate(self.result)
@@ -1171,6 +1168,10 @@ class NSGAIII(AbstractGeneticAlgorithm):
         igd_value = igd.calculate(self.result)
         self.igd.append(igd_value)
 
+        hyp = Hypervolume(reference_set=self.ref_set)
+        hyp_value = hyp.calculate(self.result)
+        self.hyp.append(hyp_value)
+
 
 class RL_NSGAIII(AbstractGeneticAlgorithm):
 
@@ -1390,6 +1391,10 @@ class RL_NSGAIII(AbstractGeneticAlgorithm):
         igd = InvertedGenerationalDistance(reference_set=self.ref_set)
         igd_value = igd.calculate(self.result)
         self.igd.append(igd_value)
+
+        hyp = Hypervolume(reference_set=self.ref_set)
+        hyp_value = hyp.calculate(self.result)
+        self.hyp.append(hyp_value)
 
     def leaning_actions(self,action,child):
         if (int(action) != len(self.actions) - 1):

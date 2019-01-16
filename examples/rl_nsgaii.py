@@ -15,7 +15,7 @@ from platypus import  *
 
 def compare_experiment(problem):
 
-    times = 10
+    times = 100
     ref_set = problem.get_ref_set()
 
     algorithms = [RL_NSGAII,NSGAII,(RL_NSGAIII,100)]

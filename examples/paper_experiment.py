@@ -15,7 +15,7 @@ from platypus import  *
 
 def compare_experiment(problem):
 
-    times = 110
+    times = 505
     pup = 100
     ref_set = problem.get_ref_set()
 
@@ -88,6 +88,13 @@ def compare_experiment(problem):
         F.write(str(type(problem).__name__) + ',')
         for i, algorithm in enumerate(six.iterkeys(results)):
             result = results[algorithm][type(problem).__name__][1]
+            F.write(str(result[-1])+ ',')
+        F.write('\n')
+
+    with open('../results/hv.csv', 'a+') as F:
+        F.write(str(type(problem).__name__) + ',')
+        for i, algorithm in enumerate(six.iterkeys(results)):
+            result = results[algorithm][type(problem).__name__][2]
             F.write(str(result[-1])+ ',')
         F.write('\n')
 
