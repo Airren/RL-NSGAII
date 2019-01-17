@@ -12,8 +12,8 @@ from platypus import  *
 # from examples import paper_experiment
 import paper_experiment
 
-# problems= [ZDT1,ZDT2,ZDT3,ZDT4,ZDT6]
-problems = [DTLZ1,DTLZ2,DTLZ3,DTLZ4,DTLZ7]
+problems= [ZDT1,ZDT2,ZDT3,ZDT4,ZDT6]
+# problems = [DTLZ1,DTLZ2,DTLZ3,DTLZ4,DTLZ7]
 with open('../results/igd.csv', 'w+') as F:
     F.write(',RL_NSGAII,NSGAII,RL_NSGAIII,NSGAIII\n')
 
@@ -23,7 +23,7 @@ for problem in problems:
 
         processes = []
         for i in range(38):
-            processes.append(mp.Process(target= paper_experiment.compare_experiment,args=(problem(2),)))
+            processes.append(mp.Process(target= paper_experiment.compare_experiment,args=(problem(),)))
         for i in range(38):
             processes[i].start()
         for i in range(38):

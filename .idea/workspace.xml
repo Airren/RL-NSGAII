@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7aba7b6-d480-46d9-9630-a718a7bf4008" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Platypus-master.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Platypus-master.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/paper_experiment.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/paper_experiment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/paper_experiment_1_100.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/paper_experiment_1_100.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/result_boxplot.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/result_boxplot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/rl_nsgaii.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/rl_nsgaii.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platypus/algorithms.py" beforeDir="false" afterPath="$PROJECT_DIR$/platypus/algorithms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platypus/experimenter.py" beforeDir="false" afterPath="$PROJECT_DIR$/platypus/experimenter.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,7 +27,7 @@
     <SUITE FILE_PATH="coverage/Platypus_master$tst.coverage" NAME="tst Coverage Results" MODIFIED="1546412656184" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/Platypus_master$paper_experiment_3D.coverage" NAME="paper_experiment_3D Coverage Results" MODIFIED="1547457089062" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/Platypus_master$rl_nsgaii_3D.coverage" NAME="rl_nsgaii_3D Coverage Results" MODIFIED="1547456791772" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
-    <SUITE FILE_PATH="coverage/Platypus_master$result_boxplot.coverage" NAME="result_boxplot Coverage Results" MODIFIED="1547615687680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
+    <SUITE FILE_PATH="coverage/Platypus_master$result_boxplot.coverage" NAME="result_boxplot Coverage Results" MODIFIED="1547691348151" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/Platypus_master$AnimatedScatter.coverage" NAME="AnimatedScatter Coverage Results" MODIFIED="1544078928436" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Platypus_master$constrained_problem_1.coverage" NAME="constrained_problem_1 Coverage Results" MODIFIED="1545103845711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/Platypus_master$paper_experiment_1_100.coverage" NAME="paper_experiment_1_100 Coverage Results" MODIFIED="1546480697352" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
@@ -52,8 +47,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/examples/result_boxplot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="514">
+              <caret line="40" column="17" lean-forward="true" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
               <folding>
                 <element signature="e#100#119#0" expanded="true" />
               </folding>
@@ -62,22 +57,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/platypus/algorithms.py">
+        <entry file="file://$PROJECT_DIR$/results/results.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="1396" column="16" selection-start-line="1396" selection-start-column="13" selection-end-line="1396" selection-end-column="16" />
-              <folding>
-                <element signature="e#819#883#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="16">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/examples/paper_experiment_1_100.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="22" lean-forward="true" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+            <state relative-caret-position="425">
+              <caret line="25" column="98" selection-start-line="25" selection-start-column="98" selection-end-line="25" selection-end-column="98" />
               <folding>
                 <element signature="e#101#129#0" expanded="true" />
               </folding>
@@ -85,7 +77,21 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/platypus/problems.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="311">
+              <caret line="1890" column="6" selection-start-line="1890" selection-start-column="6" selection-end-line="1890" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/results/igd_box_DTLZ3.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/examples/paper_experiment.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
@@ -93,24 +99,6 @@
               <folding>
                 <element signature="e#99#118#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/results/igd.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4438">
-              <caret line="41" column="87" selection-start-line="18" selection-start-column="29" selection-end-line="41" selection-end-column="87" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/platypus/experimenter.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="195" column="77" selection-start-line="195" selection-start-column="77" selection-end-line="195" selection-end-column="77" />
             </state>
           </provider>
         </entry>
@@ -182,14 +170,15 @@
         <option value="$PROJECT_DIR$/examples/analysis_result.py" />
         <option value="$PROJECT_DIR$/examples/paper_experiment_3D.py" />
         <option value="$PROJECT_DIR$/examples/rl_nsgaii_3D.py" />
-        <option value="$PROJECT_DIR$/examples/paper_experiment_1_100.py" />
         <option value="$PROJECT_DIR$/platypus/problems.py" />
         <option value="$PROJECT_DIR$/platypus/RL_brain.py" />
         <option value="$PROJECT_DIR$/examples/rl_nsgaii.py" />
-        <option value="$PROJECT_DIR$/examples/result_boxplot.py" />
         <option value="$PROJECT_DIR$/platypus/algorithms.py" />
         <option value="$PROJECT_DIR$/platypus/experimenter.py" />
         <option value="$PROJECT_DIR$/examples/paper_experiment.py" />
+        <option value="$PROJECT_DIR$/results/hv.csv" />
+        <option value="$PROJECT_DIR$/examples/result_boxplot.py" />
+        <option value="$PROJECT_DIR$/examples/paper_experiment_1_100.py" />
       </list>
     </option>
   </component>
@@ -207,7 +196,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -318,6 +306,13 @@
             <path>
               <item name="Platypus-master" type="b2602c69:ProjectViewProjectNode" />
               <item name="Platypus-master" type="462c0819:PsiDirectoryNode" />
+              <item name="platypus" type="462c0819:PsiDirectoryNode" />
+              <item name="problems.py" type="8704e2dd:PyFileNode" />
+              <item name="ZDT6" type="dd8bbb05:PyElementNode" />
+            </path>
+            <path>
+              <item name="Platypus-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Platypus-master" type="462c0819:PsiDirectoryNode" />
               <item name="results" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -329,6 +324,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -360,7 +356,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.paper_experiment">
+  <component name="RunManager" selected="Python.result_boxplot">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="Platypus-master" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -569,7 +565,8 @@
       <workItem from="1546572402914" duration="1228000" />
       <workItem from="1546779046143" duration="14833000" />
       <workItem from="1547373607960" duration="31547000" />
-      <workItem from="1547554390386" duration="2427000" />
+      <workItem from="1547554390386" duration="2996000" />
+      <workItem from="1547636823408" duration="2406000" />
     </task>
     <task id="LOCAL-00001" summary="add igd to SPEA2">
       <created>1545717418152</created>
@@ -662,7 +659,14 @@
       <option name="project" value="LOCAL" />
       <updated>1547549922280</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="变异操作 明确，接下来大量实验验证4 hpv">
+      <created>1547618039409</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1547618039409</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -671,19 +675,19 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="243394000" />
+    <option name="totallyTimeSpent" value="246369000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-1080" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2539936" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22417465" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="0" weight="0.32970297" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" />
-      <window_info anchor="bottom" id="Run" order="3" visible="true" weight="0.24059406" />
+      <window_info anchor="bottom" id="Run" order="3" visible="true" weight="0.23267327" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.45544556" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -694,11 +698,11 @@
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="12" />
       <window_info anchor="bottom" id="Python Console" order="13" weight="0.42574257" />
-      <window_info anchor="bottom" id="File Transfer" order="14" weight="0.32970297" />
+      <window_info anchor="bottom" id="File Transfer" order="14" weight="0.32959184" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" sideWeight="0.48907563" visible="true" weight="0.23109691" />
+      <window_info anchor="right" id="SciView" order="3" sideWeight="0.48907563" visible="true" weight="0.20127796" />
       <window_info anchor="right" id="R Graphics" order="4" weight="0.32967034" />
       <window_info anchor="right" id="R Packages" order="5" weight="0.32967034" />
       <window_info anchor="right" id="Database" order="6" />
@@ -746,7 +750,8 @@
     <MESSAGE value="变异操作 明确，接下来大量实验验证2" />
     <MESSAGE value="变异操作 明确，接下来大量实验验证3" />
     <MESSAGE value="变异操作 明确，接下来大量实验验证4" />
-    <option name="LAST_COMMIT_MESSAGE" value="变异操作 明确，接下来大量实验验证4" />
+    <MESSAGE value="变异操作 明确，接下来大量实验验证4 hpv" />
+    <option name="LAST_COMMIT_MESSAGE" value="变异操作 明确，接下来大量实验验证4 hpv" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -877,58 +882,10 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pareto_fronts/WFG7.2D.pf">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pareto_fronts/WFG8.2D.pf">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pareto_fronts/WFG9.2D.pf">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/WFG5_01-14_07-30-02.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/WFG2_01-14_07-15-35.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/WFG3_01-14_07-20-23.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/WFG4_01-14_07-28-44.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pareto_fronts/DTLZ1.2D.pf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="1" lean-forward="true" selection-start-column="1" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/DTLZ1_01-14_08-40-45_RL_NSGAIII.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/DTLZ1_01-14_08-40-45_RL_NSGAII.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/DTLZ1_01-14_08-40-45_NSGAIII.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/plot_operators.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/DTLZ1_01-14_08-40-45_NSGAII.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/WFG1_01-14_07-09-22.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/WFG7_01-14_07-33-56.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/WFG6_01-14_07-30-59.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/results/DTLZ1_01-14_08-40-45_NSGAII.csv" />
+    <entry file="file://$PROJECT_DIR$/results/WFG1_01-14_07-09-22.png" />
+    <entry file="file://$PROJECT_DIR$/results/WFG7_01-14_07-33-56.png" />
+    <entry file="file://$PROJECT_DIR$/results/WFG6_01-14_07-30-59.png" />
     <entry file="file://$PROJECT_DIR$/platypus/core.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="205">
@@ -943,12 +900,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/results/DTLZ1_01-14_08-40-45.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/DTLZ1_01-14_09-17-25.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/results/DTLZ1_01-14_08-40-45.png" />
+    <entry file="file://$PROJECT_DIR$/results/DTLZ1_01-14_09-17-25.png" />
     <entry file="file://$PROJECT_DIR$/examples/comparison.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="244">
@@ -959,9 +912,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/results/DTLZ1_01-14_09-24-54.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/results/DTLZ1_01-14_09-24-54.png" />
     <entry file="file://$PROJECT_DIR$/examples/paper_experiment_3D.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
@@ -972,40 +923,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/results/DTLZ1_01-14_09-31-42.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/WFG1_01-14_07-11-50.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/WFG2_01-14_07-14-40.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/box_ZDT3.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/box_ZDT6.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/results/DTLZ1_01-14_09-31-42.png" />
+    <entry file="file://$PROJECT_DIR$/results/WFG1_01-14_07-11-50.png" />
+    <entry file="file://$PROJECT_DIR$/results/WFG2_01-14_07-14-40.png" />
+    <entry file="file://$PROJECT_DIR$/results/box_ZDT3.png" />
+    <entry file="file://$PROJECT_DIR$/results/box_ZDT6.png" />
     <entry file="file://$PROJECT_DIR$/pareto_fronts/DTLZ7.2D.pf">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/platypus/problems.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="260" column="68" selection-start-line="260" selection-start-column="68" selection-end-line="260" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/box_ZDT4.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/box_ZDT2.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/box_ZDT1.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/results/box_ZDT4.png" />
+    <entry file="file://$PROJECT_DIR$/results/box_ZDT2.png" />
+    <entry file="file://$PROJECT_DIR$/results/box_ZDT1.png" />
     <entry file="file://$PROJECT_DIR$/examples/q_table_zdt2.csv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1042,41 +970,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/results/results.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/box_DTLZ7.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/box_DTLZ4.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/box_DTLZ3.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/box_DTLZ2.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/box_DTLZ1.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/result_boxplot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="e#100#119#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/platypus/algorithms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
+        <state relative-caret-position="23256">
           <caret line="1396" column="16" selection-start-line="1396" selection-start-column="13" selection-end-line="1396" selection-end-column="16" />
           <folding>
             <element signature="e#819#883#0" expanded="true" />
@@ -1086,27 +982,89 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/platypus/experimenter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
+        <state relative-caret-position="885">
           <caret line="195" column="77" selection-start-line="195" selection-start-column="77" selection-end-line="195" selection-end-column="77" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/results/box_DTLZ1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/box_DTLZ3.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/box_DTLZ4.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/box_DTLZ2.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/box_DTLZ7.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/results/igd.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4438">
-          <caret line="41" column="87" selection-start-line="18" selection-start-column="29" selection-end-line="41" selection-end-column="87" />
+        <state>
+          <caret column="3" lean-forward="true" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/examples/paper_experiment_1_100.py">
+    <entry file="file://$PROJECT_DIR$/results/hv.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="22" lean-forward="true" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+        <state>
+          <caret column="36" selection-start-column="36" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/box_DTLZ1hv.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/box_DTLZ2hv.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/box_DTLZ3hv.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/box_DTLZ4hv.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/igd_box_DTLZ1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/igd_box_DTLZ2.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/igd_box_DTLZ4.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/igd_box_DTLZ7.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/box_DTLZ7hv.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/results2.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/results.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/result_boxplot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="514">
+          <caret line="40" column="17" lean-forward="true" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
           <folding>
-            <element signature="e#101#129#0" expanded="true" />
+            <element signature="e#100#119#0" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/igd_box_DTLZ3.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/examples/paper_experiment.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -1114,6 +1072,23 @@
           <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
           <folding>
             <element signature="e#99#118#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/platypus/problems.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="1890" column="6" selection-start-line="1890" selection-start-column="6" selection-end-line="1890" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/paper_experiment_1_100.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="98" selection-start-line="25" selection-start-column="98" selection-end-line="25" selection-end-column="98" />
+          <folding>
+            <element signature="e#101#129#0" expanded="true" />
           </folding>
         </state>
       </provider>

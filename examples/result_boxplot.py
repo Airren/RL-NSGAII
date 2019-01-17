@@ -10,9 +10,9 @@ import numpy as np
 # from scipy import stats
 import matplotlib.pyplot as plt
 
-igd = pd.read_csv('../results/igd.csv',index_col=0,usecols=[0,1,2,3,4])
+igd = pd.read_csv('../results/hv.csv',index_col=0,usecols=[0,1,2,3,4])
 with open('../results/results.csv','w') as F:
-    F.write('ALlgorithm,Mean,VAR,T_value\n')
+    F.write(',RL_NSGAII,NSGAII,RL_NSGAIII,NSGAIII\n')
 
 algorithms = list(igd.columns)
 
@@ -21,7 +21,7 @@ algorithms = list(igd.columns)
 for i in set(igd.index):
 
     with open('../results/results.csv', 'a+') as F:
-        F.write(i + ',')
+        F.write(i)
     box_data = igd.ix[i,:]
 
     # a = box_data.ix[i, 'RL_NSGAII']
@@ -31,7 +31,7 @@ for i in set(igd.index):
     # e = box_data.ix[i, 'SPEA2']
     for j in algorithms:
         with open('../results/results.csv', 'a+') as F:
-            F.write(str(np.mean(box_data.ix[i, j]))+','+str(np.var(box_data.ix[i, j]))+'\n')
+            F.write(','+str(np.mean(box_data.ix[i, j]))+',\n,'+str(np.var(box_data.ix[i, j]))+'\n')
 
 
 
@@ -39,7 +39,7 @@ for i in set(igd.index):
     igd.ix[i, :].boxplot()
     plt.ylabel("IGD")
     plt.xlabel(i)
-    plt.savefig("../results/box_" + i + ".png",dpi=400)
+    plt.savefig("../results/igd_box_" + i + ".png",dpi=400)
     plt.close()
 
 print("SUCCESS")
