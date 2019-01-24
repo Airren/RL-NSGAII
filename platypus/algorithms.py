@@ -326,14 +326,14 @@ class RL_NSGAII(AbstractGeneticAlgorithm):
 
 
 
-        '''
-        收敛过程中的评价指标
-        '''
+        # '''
+        # 收敛过程中的评价指标
+        # '''
         igd = InvertedGenerationalDistance(reference_set=self.ref_set)
         igd_value = igd.calculate(self.result)
         self.igd.append(igd_value)
-
-
+        #
+        #
         hyp = Hypervolume(reference_set=self.ref_set)
         hyp_value = hyp.calculate(self.result)
         self.hyp.append(hyp_value)
@@ -997,6 +997,8 @@ class NSGAIII(AbstractGeneticAlgorithm):
         self.population_size = choose(problem.nobjs + divisions_outer - 1, divisions_outer) + \
                 (0 if divisions_inner == 0 else choose(problem.nobjs + divisions_inner - 1, divisions_inner))
         self.population_size = int(math.ceil(self.population_size / 4.0)) * 4
+        # self.population_size = 100
+        # print(self.population_size, '12')
 
         self.ideal_point = [POSITIVE_INFINITY]*problem.nobjs
         self.reference_points = normal_boundary_weights(problem.nobjs, divisions_outer, divisions_inner)
@@ -1190,6 +1192,7 @@ class RL_NSGAIII(AbstractGeneticAlgorithm):
                                (0 if divisions_inner == 0 else choose(problem.nobjs + divisions_inner - 1,
                                                                       divisions_inner))
         self.population_size = int(math.ceil(self.population_size / 4.0)) * 4
+        # print(self.population_size,'12')
 
         self.ideal_point = [POSITIVE_INFINITY] * problem.nobjs
         self.reference_points = normal_boundary_weights(problem.nobjs, divisions_outer, divisions_inner)

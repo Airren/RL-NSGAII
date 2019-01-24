@@ -49,6 +49,12 @@ class ThreeObjectives(Problem):
         super(ThreeObjectives, self).__init__(1, 3)
         self.types[:] = Real(-10, 10)
 
+class SixObjectives(Problem):
+    # _instance_lock = threading.Lock()
+
+    def __init__(self):
+        super(ThreeObjectives, self).__init__(1, 6)
+        self.types[:] = Real(-10, 10)
 
 
 class Schaffer(Problem):
@@ -112,11 +118,17 @@ class DTLZ1(Problem):
         solution.evaluate()
         return solution
     def get_ref_set(self):
+
         ref_set = []
-        pf_true = pd.read_csv("../pareto_fronts/DTLZ1.2D.pf", sep="\t", header=-1, names=['f1', 'f2'], index_col=None,
-                    float_precision=14, usecols=[0, 1])
+        pf_true = pd.read_csv("../pareto_fronts/DTLZ1."+str(self.nobjs)+"D.pf", sep="\t", header=-1, names=None, index_col=None,
+                    float_precision=14, usecols=list(range(self.nobjs)))
         for row in pf_true.iterrows():
-            solution = Solution(TwoObjectives())
+            if self.nobjs ==2:
+                solution = Solution(TwoObjectives())
+            elif self.nobjs ==3:
+                solution = Solution(ThreeObjectives())
+            elif self.nobjs == 6:
+                solution = Solution(SixObjectives())
             solution.objectives[:] = list(row[1])
             ref_set.append(solution)
         return  ref_set
@@ -152,10 +164,15 @@ class DTLZ2(Problem):
         return solution
     def get_ref_set(self):
         ref_set = []
-        pf_true = pd.read_csv("../pareto_fronts/DTLZ2.2D.pf", sep="\t", header=-1, names=['f1', 'f2'], index_col=None,
+        pf_true = pd.read_csv("../pareto_fronts/DTLZ2."+str(self.nobjs)+"D.pf", sep="\t", header=-1, names=['f1', 'f2'], index_col=None,
                     float_precision=14, usecols=[0, 1])
         for row in pf_true.iterrows():
-            solution = Solution(TwoObjectives())
+            if self.nobjs ==2:
+                solution = Solution(TwoObjectives())
+            elif self.nobjs ==3:
+                solution = Solution(ThreeObjectives())
+            elif self.nobjs == 6:
+                solution = Solution(SixObjectives())
             solution.objectives[:] = list(row[1])
             ref_set.append(solution)
         return  ref_set
@@ -189,10 +206,15 @@ class DTLZ3(Problem):
         return solution
     def get_ref_set(self):
         ref_set = []
-        pf_true = pd.read_csv("../pareto_fronts/DTLZ3.2D.pf", sep="\t", header=-1, names=['f1', 'f2'], index_col=None,
+        pf_true = pd.read_csv("../pareto_fronts/DTLZ3."+str(self.nobjs)+"D.pf", sep="\t", header=-1, names=['f1', 'f2'], index_col=None,
                     float_precision=14, usecols=[0, 1])
         for row in pf_true.iterrows():
-            solution = Solution(Schaffer())
+            if self.nobjs ==2:
+                solution = Solution(TwoObjectives())
+            elif self.nobjs ==3:
+                solution = Solution(ThreeObjectives())
+            elif self.nobjs == 6:
+                solution = Solution(SixObjectives())
             solution.objectives[:] = list(row[1])
             ref_set.append(solution)
         return  ref_set
@@ -227,10 +249,15 @@ class DTLZ4(Problem):
         return solution
     def get_ref_set(self):
         ref_set = []
-        pf_true = pd.read_csv("../pareto_fronts/DTLZ4.2D.pf", sep="\t", header=-1, names=['f1', 'f2'], index_col=None,
+        pf_true = pd.read_csv("../pareto_fronts/DTLZ4."+str(self.nobjs)+"D.pf", sep="\t", header=-1, names=['f1', 'f2'], index_col=None,
                     float_precision=14, usecols=[0, 1])
         for row in pf_true.iterrows():
-            solution = Solution(Schaffer())
+            if self.nobjs ==2:
+                solution = Solution(TwoObjectives())
+            elif self.nobjs ==3:
+                solution = Solution(ThreeObjectives())
+            elif self.nobjs == 6:
+                solution = Solution(SixObjectives())
             solution.objectives[:] = list(row[1])
             ref_set.append(solution)
         return  ref_set
@@ -258,10 +285,15 @@ class DTLZ7(Problem):
         return solution
     def get_ref_set(self):
         ref_set = []
-        pf_true = pd.read_csv("../pareto_fronts/DTLZ7.2D.pf", sep=" ", header=-1, names=['f1', 'f2'], index_col=None,
+        pf_true = pd.read_csv("../pareto_fronts/DTLZ7."+str(self.nobjs)+"D.pf", sep=" ", header=-1, names=['f1', 'f2'], index_col=None,
                     float_precision=14, usecols=[0, 1])
         for row in pf_true.iterrows():
-            solution = Solution(Schaffer())
+            if self.nobjs ==2:
+                solution = Solution(TwoObjectives())
+            elif self.nobjs ==3:
+                solution = Solution(ThreeObjectives())
+            elif self.nobjs == 6:
+                solution = Solution(SixObjectives())
             solution.objectives[:] = list(row[1])
             ref_set.append(solution)
         return  ref_set
