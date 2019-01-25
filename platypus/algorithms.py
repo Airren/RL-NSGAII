@@ -217,13 +217,15 @@ class NSGAII(AbstractGeneticAlgorithm):
         nondominated_sort(offspring)
         self.population = nondominated_truncate(offspring, self.population_size)
 
-        igd = InvertedGenerationalDistance(reference_set=self.ref_set)
-        igd_value = igd.calculate(self.result)
-        self.igd.append(igd_value)
-
-        hyp = Hypervolume(reference_set=self.ref_set)
-        hyp_value = hyp.calculate(self.result)
-        self.hyp.append(hyp_value)
+        if self.nfe / self.population_size >= 490:
+            igd = InvertedGenerationalDistance(reference_set=self.ref_set)
+            igd_value = igd.calculate(self.result)
+            self.igd.append(igd_value)
+            #
+            #
+            hyp = Hypervolume(reference_set=self.ref_set)
+            hyp_value = hyp.calculate(self.result)
+            self.hyp.append(hyp_value)
         # gd = GenerationalDistance(reference_set=self.ref_set)
         # gd_value = gd.calculate(self.result)
         # # print("GD:", gd_value)
@@ -329,14 +331,15 @@ class RL_NSGAII(AbstractGeneticAlgorithm):
         # '''
         # 收敛过程中的评价指标
         # '''
-        igd = InvertedGenerationalDistance(reference_set=self.ref_set)
-        igd_value = igd.calculate(self.result)
-        self.igd.append(igd_value)
-        #
-        #
-        hyp = Hypervolume(reference_set=self.ref_set)
-        hyp_value = hyp.calculate(self.result)
-        self.hyp.append(hyp_value)
+        if self.nfe / self.population_size >= 490:
+            igd = InvertedGenerationalDistance(reference_set=self.ref_set)
+            igd_value = igd.calculate(self.result)
+            self.igd.append(igd_value)
+            #
+            #
+            hyp = Hypervolume(reference_set=self.ref_set)
+            hyp_value = hyp.calculate(self.result)
+            self.hyp.append(hyp_value)
         # # #
         # gd = GenerationalDistance(reference_set=self.ref_set)
         # gd_value = gd.calculate(self.result)
@@ -1166,13 +1169,15 @@ class NSGAIII(AbstractGeneticAlgorithm):
         nondominated_sort(offspring)
         self.population = self._reference_point_truncate(offspring, self.population_size)
 
-        igd = InvertedGenerationalDistance(reference_set=self.ref_set)
-        igd_value = igd.calculate(self.result)
-        self.igd.append(igd_value)
-
-        hyp = Hypervolume(reference_set=self.ref_set)
-        hyp_value = hyp.calculate(self.result)
-        self.hyp.append(hyp_value)
+        if self.nfe / self.population_size >= 490:
+            igd = InvertedGenerationalDistance(reference_set=self.ref_set)
+            igd_value = igd.calculate(self.result)
+            self.igd.append(igd_value)
+            #
+            #
+            hyp = Hypervolume(reference_set=self.ref_set)
+            hyp_value = hyp.calculate(self.result)
+            self.hyp.append(hyp_value)
 
 
 class RL_NSGAIII(AbstractGeneticAlgorithm):
@@ -1391,13 +1396,15 @@ class RL_NSGAIII(AbstractGeneticAlgorithm):
         nondominated_sort(offspring)
         self.population = self._reference_point_truncate(offspring, self.population_size)
 
-        igd = InvertedGenerationalDistance(reference_set=self.ref_set)
-        igd_value = igd.calculate(self.result)
-        self.igd.append(igd_value)
-
-        hyp = Hypervolume(reference_set=self.ref_set)
-        hyp_value = hyp.calculate(self.result)
-        self.hyp.append(hyp_value)
+        if self.nfe / self.population_size >= 490:
+            igd = InvertedGenerationalDistance(reference_set=self.ref_set)
+            igd_value = igd.calculate(self.result)
+            self.igd.append(igd_value)
+            #
+            #
+            hyp = Hypervolume(reference_set=self.ref_set)
+            hyp_value = hyp.calculate(self.result)
+            self.hyp.append(hyp_value)
 
     def leaning_actions(self,action,child):
         if (int(action) != len(self.actions) - 1):
