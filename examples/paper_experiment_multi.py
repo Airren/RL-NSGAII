@@ -56,7 +56,7 @@ def compare_experiment(problem):
     for i, algorithm in enumerate(six.iterkeys(results)):
         result = results[algorithm][type(problem).__name__][0]
 
-        plt.subplot(1, len(results) + 1, i + 1)
+        plt.subplot(1, len(results) + 1, i + 1, projection='3d')
         plt.title(algorithm)
         plt.xlabel("$f_1(x)$")
         plt.ylabel("$f_2(x)$")
