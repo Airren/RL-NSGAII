@@ -167,6 +167,7 @@ class DTLZ2(Problem):
         pf_true = pd.read_csv("../pareto_fronts/DTLZ2." + str(self.nobjs) + "D.pf", sep="\t", header=-1, names=None,
                               index_col=None,
                               float_precision=14, usecols=list(range(self.nobjs)))
+
         for row in pf_true.iterrows():
             if self.nobjs ==2:
                 solution = Solution(TwoObjectives())
