@@ -6,7 +6,7 @@ __date__ = '2018-12-18 11:35'
 import pandas as pd
 import numpy as np
 import threading
-
+from mpl_toolkits.mplot3d import Axes3D
 
 import matplotlib.pyplot as plt
 from platypus import  *
@@ -15,7 +15,7 @@ from platypus import  *
 
 def compare_experiment(problem):
 
-    times = 500
+    times = 505
     pup = 100
     ref_set = problem.get_ref_set()
 
@@ -61,11 +61,12 @@ def compare_experiment(problem):
         plt.xlabel("$f_1(x)$")
         plt.ylabel("$f_2(x)$")
         plt.scatter([k.objectives[0] for k in ref_set],
-                    [k.objectives[1] for k in ref_set], c='b', marker='.',s=1,)
+                    [k.objectives[1] for k in ref_set],
+                    [k.objectives[2] for k in ref_set], c='b', marker='.', )
 
         plt.scatter([k.objectives[0] for k in result],
-                    [k.objectives[1] for k in result], c=colors[i], marker='x')
-
+                    [k.objectives[1] for k in result],
+                    [k.objectives[2] for k in result], c=colors[i], marker='x')
 
     #
     plt.subplot(1, len(results)+1, len(results)+1)
