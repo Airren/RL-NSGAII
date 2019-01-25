@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e7aba7b6-d480-46d9-9630-a718a7bf4008" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/paper_experiment_1_100.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/paper_experiment_1_100.py" afterDir="false" />
-    </list>
+    <list default="true" id="e7aba7b6-d480-46d9-9630-a718a7bf4008" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +65,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/examples/paper_experiment_multi.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="511">
+            <state relative-caret-position="1734">
               <caret line="108" selection-start-line="108" selection-end-line="108" />
             </state>
           </provider>
@@ -584,7 +581,7 @@
       <workItem from="1547781013046" duration="304000" />
       <workItem from="1547810693471" duration="2388000" />
       <workItem from="1548050821369" duration="735000" />
-      <workItem from="1548297228681" duration="5921000" />
+      <workItem from="1548297228681" duration="6173000" />
     </task>
     <task id="LOCAL-00001" summary="add igd to SPEA2">
       <created>1545717418152</created>
@@ -705,7 +702,14 @@
       <option name="project" value="LOCAL" />
       <updated>1548387968311</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="DTLZ 3 6 最优解增加">
+      <created>1548388149883</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1548388149883</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -714,7 +718,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="257309000" />
+    <option name="totallyTimeSpent" value="257561000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-1080" width="1920" height="1080" extended-state="0" />
@@ -1112,7 +1116,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/examples/paper_experiment_multi.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
+        <state relative-caret-position="1734">
           <caret line="108" selection-start-line="108" selection-end-line="108" />
         </state>
       </provider>
