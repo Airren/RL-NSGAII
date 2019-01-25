@@ -15,7 +15,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/Platypus_master$simple.coverage" NAME="simple Coverage Results" MODIFIED="1542699030864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/Platypus_master$experiment.coverage" NAME="experiment Coverage Results" MODIFIED="1544605371534" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/nsga2_differrent_version/nsgaii-master/src" />
-    <SUITE FILE_PATH="coverage/Platypus_master$paper_experiment_multi.coverage" NAME="paper_experiment_multi Coverage Results" MODIFIED="1548393709576" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
+    <SUITE FILE_PATH="coverage/Platypus_master$paper_experiment_multi.coverage" NAME="paper_experiment_multi Coverage Results" MODIFIED="1548433302511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/Platypus_master$Unittests_for_platypus_tests_test_problems_TestProblemsSimple.coverage" NAME="Unittests for platypus.tests.test_problems.TestProblemsSimple Coverage Results" MODIFIED="1542799589013" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Platypus_master$constrained_problem_2.coverage" NAME="constrained_problem_2 Coverage Results" MODIFIED="1542008562250" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/Platypus_master$NSGAII.coverage" NAME="NSGAII Coverage Results" MODIFIED="1545046163065" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NSGA_RL" />
@@ -48,8 +48,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/examples/paper_experiment_multi.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="108" column="26" selection-start-line="108" selection-start-column="26" selection-end-line="108" selection-end-column="26" />
+            <state relative-caret-position="187">
+              <caret line="108" column="27" selection-start-line="108" selection-start-column="27" selection-end-line="108" selection-end-column="27" />
               <folding>
                 <element signature="e#99#118#0" expanded="true" />
               </folding>
@@ -57,13 +57,27 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file:///anaconda3/envs/python35/lib/python3.5/site-packages/pandas/io/parsers.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="1755" selection-start-line="1755" selection-end-line="1755" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/platypus/problems.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="669">
-              <caret line="287" column="110" selection-start-line="287" selection-start-column="110" selection-end-line="287" selection-end-column="110" />
+            <state relative-caret-position="412">
+              <caret line="166" column="91" selection-start-line="166" selection-start-column="91" selection-end-line="166" selection-end-column="91" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/results/DTLZ3_01-25_16-18-47.png">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
     </leaf>
@@ -267,6 +281,27 @@
               <item name="Platypus-master" type="462c0819:PsiDirectoryNode" />
               <item name="platypus" type="462c0819:PsiDirectoryNode" />
               <item name="problems.py" type="8704e2dd:PyFileNode" />
+              <item name="DTLZ3" type="dd8bbb05:PyElementNode" />
+            </path>
+            <path>
+              <item name="Platypus-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Platypus-master" type="462c0819:PsiDirectoryNode" />
+              <item name="platypus" type="462c0819:PsiDirectoryNode" />
+              <item name="problems.py" type="8704e2dd:PyFileNode" />
+              <item name="DTLZ4" type="dd8bbb05:PyElementNode" />
+            </path>
+            <path>
+              <item name="Platypus-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Platypus-master" type="462c0819:PsiDirectoryNode" />
+              <item name="platypus" type="462c0819:PsiDirectoryNode" />
+              <item name="problems.py" type="8704e2dd:PyFileNode" />
+              <item name="DTLZ7" type="dd8bbb05:PyElementNode" />
+            </path>
+            <path>
+              <item name="Platypus-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Platypus-master" type="462c0819:PsiDirectoryNode" />
+              <item name="platypus" type="462c0819:PsiDirectoryNode" />
+              <item name="problems.py" type="8704e2dd:PyFileNode" />
               <item name="TwoObjectives" type="dd8bbb05:PyElementNode" />
             </path>
             <path>
@@ -278,6 +313,85 @@
               <item name="Platypus-master" type="b2602c69:ProjectViewProjectNode" />
               <item name="Platypus-master" type="462c0819:PsiDirectoryNode" />
               <item name="setup.py" type="8704e2dd:PyFileNode" />
+            </path>
+            <path>
+              <item name="Platypus-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="Platypus-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Python 3.5 (python35) (1) &gt;" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="Platypus-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Python 3.5 (python35) (1) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="python3.5" type="b5f07198:RTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Platypus-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Python 3.5 (python35) (1) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="python3.5" type="b5f07198:RTreeStructureProvider$1" />
+              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Platypus-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Python 3.5 (python35) (1) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="python3.5" type="b5f07198:RTreeStructureProvider$1" />
+              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
+              <item name="pandas" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Platypus-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Python 3.5 (python35) (1) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="python3.5" type="b5f07198:RTreeStructureProvider$1" />
+              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
+              <item name="pandas" type="462c0819:PsiDirectoryNode" />
+              <item name="io" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Platypus-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Python 3.5 (python35) (1) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="python3.5" type="b5f07198:RTreeStructureProvider$1" />
+              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
+              <item name="pandas" type="462c0819:PsiDirectoryNode" />
+              <item name="io" type="462c0819:PsiDirectoryNode" />
+              <item name="parsers.py" type="8704e2dd:PyFileNode" />
+            </path>
+            <path>
+              <item name="Platypus-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Python 3.5 (python35) (1) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="site-packages" type="b5f07198:RTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Platypus-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Python 3.5 (python35) (1) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="site-packages" type="b5f07198:RTreeStructureProvider$1" />
+              <item name="pandas" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Platypus-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Python 3.5 (python35) (1) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="site-packages" type="b5f07198:RTreeStructureProvider$1" />
+              <item name="pandas" type="462c0819:PsiDirectoryNode" />
+              <item name="io" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Platypus-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Python 3.5 (python35) (1) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="site-packages" type="b5f07198:RTreeStructureProvider$1" />
+              <item name="pandas" type="462c0819:PsiDirectoryNode" />
+              <item name="io" type="462c0819:PsiDirectoryNode" />
+              <item name="parsers.py" type="8704e2dd:PyFileNode" />
             </path>
           </expand>
           <select />
@@ -525,7 +639,7 @@
       <workItem from="1547781013046" duration="304000" />
       <workItem from="1547810693471" duration="2388000" />
       <workItem from="1548050821369" duration="735000" />
-      <workItem from="1548297228681" duration="9155000" />
+      <workItem from="1548297228681" duration="10620000" />
     </task>
     <task id="LOCAL-00001" summary="add igd to SPEA2">
       <created>1545717418152</created>
@@ -688,7 +802,35 @@
       <option name="project" value="LOCAL" />
       <updated>1548393552705</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="DTLZ 3 6 最优解增加">
+      <created>1548431859244</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1548431859244</updated>
+    </task>
+    <task id="LOCAL-00025" summary="DTLZ 3 6 最优解增加">
+      <created>1548432031364</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1548432031364</updated>
+    </task>
+    <task id="LOCAL-00026" summary="DTLZ 3 6 最优解增加8">
+      <created>1548432116842</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1548432116842</updated>
+    </task>
+    <task id="LOCAL-00027" summary="DTLZ 3 6 最优解增加8">
+      <created>1548432124434</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1548432124434</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -697,20 +839,20 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="260543000" />
+    <option name="totallyTimeSpent" value="262008000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26923078" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26923078" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="0" weight="0.32970297" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" />
-      <window_info anchor="bottom" id="Run" order="3" weight="0.37857142" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.45544556" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.37857142" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.45510203" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" />
@@ -720,7 +862,7 @@
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="12" />
       <window_info anchor="bottom" id="Python Console" order="13" weight="0.42574257" />
-      <window_info anchor="bottom" id="File Transfer" order="14" weight="0.3049505" />
+      <window_info anchor="bottom" id="File Transfer" order="14" weight="0.30408162" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -775,7 +917,8 @@
     <MESSAGE value="变异操作 明确，接下来大量实验验证4" />
     <MESSAGE value="变异操作 明确，接下来大量实验验证4 hpv" />
     <MESSAGE value="DTLZ 3 6 最优解增加" />
-    <option name="LAST_COMMIT_MESSAGE" value="DTLZ 3 6 最优解增加" />
+    <MESSAGE value="DTLZ 3 6 最优解增加8" />
+    <option name="LAST_COMMIT_MESSAGE" value="DTLZ 3 6 最优解增加8" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -827,7 +970,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/platypus/problems.py</url>
-          <line>1841</line>
+          <line>1845</line>
           <option name="timeStamp" value="93" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -885,6 +1028,11 @@
           <line>5</line>
           <option name="timeStamp" value="162" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/platypus/problems.py</url>
+          <line>169</line>
+          <option name="timeStamp" value="163" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -896,14 +1044,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/platypus/experimenter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="885">
-          <caret line="195" column="77" selection-start-line="195" selection-start-column="77" selection-end-line="195" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/box_DTLZ1.png" />
     <entry file="file://$PROJECT_DIR$/results/box_DTLZ3.png" />
     <entry file="file://$PROJECT_DIR$/results/box_DTLZ4.png" />
     <entry file="file://$PROJECT_DIR$/results/box_DTLZ2.png" />
@@ -1086,10 +1226,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///anaconda3/envs/python35/lib/python3.5/site-packages/pandas/io/parsers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="1755" selection-start-line="1755" selection-end-line="1755" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/DTLZ3_01-25_16-18-47.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/examples/paper_experiment_multi.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="108" column="26" selection-start-line="108" selection-start-column="26" selection-end-line="108" selection-end-column="26" />
+        <state relative-caret-position="187">
+          <caret line="108" column="27" selection-start-line="108" selection-start-column="27" selection-end-line="108" selection-end-column="27" />
           <folding>
             <element signature="e#99#118#0" expanded="true" />
           </folding>
@@ -1098,8 +1248,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/platypus/problems.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="669">
-          <caret line="287" column="110" selection-start-line="287" selection-start-column="110" selection-end-line="287" selection-end-column="110" />
+        <state relative-caret-position="412">
+          <caret line="166" column="91" selection-start-line="166" selection-start-column="91" selection-end-line="166" selection-end-column="91" />
         </state>
       </provider>
     </entry>
