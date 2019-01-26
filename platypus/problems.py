@@ -53,7 +53,7 @@ class SixObjectives(Problem):
     # _instance_lock = threading.Lock()
 
     def __init__(self):
-        super(ThreeObjectives, self).__init__(1, 6)
+        super(SixObjectives, self).__init__(1, 6)
         self.types[:] = Real(-10, 10)
 
 
@@ -120,7 +120,7 @@ class DTLZ1(Problem):
     def get_ref_set(self):
 
         ref_set = []
-        pf_true = pd.read_csv("../pareto_fronts/DTLZ1."+str(self.nobjs)+"D.pf", sep="\t", header=-1, names=None, index_col=None,
+        pf_true = pd.read_csv("../pareto_fronts/DTLZ1."+str(self.nobjs)+"D.pf", sep=" ", header=-1, names=None, index_col=None,
                     float_precision=14, usecols=list(range(self.nobjs)))
         for row in pf_true.iterrows():
             if self.nobjs ==2:
@@ -164,7 +164,7 @@ class DTLZ2(Problem):
         return solution
     def get_ref_set(self):
         ref_set = []
-        pf_true = pd.read_csv("../pareto_fronts/DTLZ2." + str(self.nobjs) + "D.pf", sep="\t", header=-1, names=None,
+        pf_true = pd.read_csv("../pareto_fronts/DTLZ2." + str(self.nobjs) + "D.pf", sep=" ", header=-1, names=None,
                               index_col=None,
                               float_precision=14, usecols=list(range(self.nobjs)))
 

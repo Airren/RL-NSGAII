@@ -15,7 +15,7 @@ from platypus import  *
 
 def compare_experiment(problem):
 
-    times = 5
+    times = 205
     pup = 100
     ref_set = problem.get_ref_set()
 
@@ -24,8 +24,8 @@ def compare_experiment(problem):
     algorithms = [
         RL_NSGAII,
         NSGAII,
-        (RL_NSGAIII, {"divisions_outer": 13}),
-        (NSGAIII, {"divisions_outer": 13}),
+        (RL_NSGAIII, {"divisions_outer": 4}),
+        (NSGAIII, {"divisions_outer": 4}),
         # (CMAES, {"epsilons": [0.05]}),
         # GDE3,
         # IBEA,
@@ -106,7 +106,7 @@ def compare_experiment(problem):
 if __name__ == "__main__":
     # for i in [WFG4(2),WFG5(2),WFG6(2),WFG7(2),WFG8(2),WFG9(2),]:
     #     compare_experiment(i)
-    compare_experiment(DTLZ2(3))
+    compare_experiment(DTLZ2(6))
 
 
 

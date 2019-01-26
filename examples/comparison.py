@@ -4,24 +4,25 @@ from mpl_toolkits.mplot3d import Axes3D
 
 if __name__ == '__main__':
     # setup the experiment
-    problem = DTLZ2(3)
+    problem = ZDT1()
 
     algorithms = [
                   (NSGAIII, {"divisions_outer": 12}),
         RL_NSGAII,
                   # (CMAES, {"epsilons": [0.05]}),
         NSGAII,
-                  GDE3,
-                  IBEA,
-                  (MOEAD, {"weight_generator": normal_boundary_weights, "divisions_outer": 12}),
-                  (OMOPSO, {"epsilons": [0.05]}),
-                  SMPSO,
-                  SPEA2,
-                  (EpsMOEA, {"epsilons": [0.05]})]
+                  # GDE3,
+                  # IBEA,
+                  # (MOEAD, {"weight_generator": normal_boundary_weights, "divisions_outer": 12}),
+                  # (OMOPSO, {"epsilons": [0.05]}),
+                  # SMPSO,
+                  # SPEA2,
+                  # (EpsMOEA, {"epsilons": [0.05]})]
+    ]
 
     # run the experiment using Python 3's concurrent futures for parallel evaluation
     with ProcessPoolEvaluator() as evaluator:
-        results = experiment(algorithms, problem, seeds=1, nfe=10000, evaluator=evaluator)
+        results = experiment(algorithms, problem, seeds=1, nfe=500, evaluator=evaluator)
 
     # display the results
     fig = plt.figure()
