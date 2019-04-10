@@ -107,7 +107,7 @@ def compare_experiment(problem):
 if __name__ == "__main__":
     # for i in [WFG4(2),WFG5(2),WFG6(2),WFG7(2),WFG8(2),WFG9(2),]:
     #     compare_experiment(i)
-    compare_experiment(DTLZ2(6))
+    compare_experiment(ZDT2())
 
 
 
