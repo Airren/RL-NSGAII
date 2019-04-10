@@ -5,7 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/NSGA_RL" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/nsga2_differrent_version/nsgaii-master/src" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.5 (python35) (1)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.7" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="R Skeletons" level="application" />
     <orderEntry type="library" name="R User Library" level="project" />

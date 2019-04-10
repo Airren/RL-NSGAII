@@ -15,7 +15,7 @@ from platypus import  *
 
 def compare_experiment(problem):
 
-    times = 505
+    times = 205
     pup = 100
     ref_set = problem.get_ref_set()
 

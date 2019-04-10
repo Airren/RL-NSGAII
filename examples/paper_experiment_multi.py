@@ -25,8 +25,8 @@ def compare_experiment(problem):
     algorithms = [
         RL_NSGAII,
         NSGAII,
-        (RL_NSGAIII, {"divisions_outer": 4}),
-        (NSGAIII, {"divisions_outer": 4}),
+        # (RL_NSGAIII, {"divisions_outer": 4}),
+        # (NSGAIII, {"divisions_outer": 4}),
         # (CMAES, {"epsilons": [0.05]}),
         # GDE3,
         # IBEA,
