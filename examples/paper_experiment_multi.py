@@ -51,23 +51,23 @@ def compare_experiment(problem):
     # 'slateblue':            '#6A5ACD',
     colors = ['#FF0000','#7CFC00','#00FFFF','#8B0000','#FF8C00','#00BFFF','#FF69B4','#6A5ACD',]
     # fig.tight_layout()  # 调整整体空白
-    plt.figure(figsize=(30,5))
+    plt.figure(figsize=(15,5))
     plt.subplots_adjust(wspace=0.3, hspace=0)  # 调整子图间距
 
     for i, algorithm in enumerate(six.iterkeys(results)):
         result = results[algorithm][type(problem).__name__][0]
 
-        plt.subplot(1, len(results) + 1, i + 1, projection='3d')
+        plt.subplot(1, len(results) + 1, i + 1)
         plt.title(algorithm)
         plt.xlabel("$f_1(x)$")
         plt.ylabel("$f_2(x)$")
         plt.scatter([k.objectives[0] for k in ref_set],
                     [k.objectives[1] for k in ref_set],
-                    [k.objectives[2] for k in ref_set], c='b', marker='.', )
+                     c='b', marker='.', )
 
         plt.scatter([k.objectives[0] for k in result],
                     [k.objectives[1] for k in result],
-                    [k.objectives[2] for k in result], c=colors[i], marker='x')
+                     c=colors[i], marker='x')
 
     #
     plt.subplot(1, len(results)+1, len(results)+1)
